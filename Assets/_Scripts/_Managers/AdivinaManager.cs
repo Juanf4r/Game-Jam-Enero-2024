@@ -27,7 +27,7 @@ public class AdivinaManager : MonoBehaviour
 
     private void ResetGame()
     {
-        feedbackText.text = "Intenta adivinar la palabra";
+        feedbackText.text = "Try to guess the password";
         inputField.text = "";
         maximoIntentos = 6;
         UpdateIntentosText();
@@ -35,7 +35,7 @@ public class AdivinaManager : MonoBehaviour
 
     private void UpdateIntentosText()
     {
-        MostrarIntentosT.text = "Intentos restantes: " + maximoIntentos;
+        MostrarIntentosT.text = "Remaining Attempts: " + maximoIntentos;
     }
 
     public void CheckGuess()
@@ -46,7 +46,12 @@ public class AdivinaManager : MonoBehaviour
         {
             maximoIntentos--;
             UpdateIntentosText();
-            feedbackText.text = "La palabra debe tener " + contraseñaActual.Length + " letras";
+            feedbackText.text = "The word must have " + contraseñaActual.Length + " letter";
+            if (maximoIntentos <= 0)
+            {
+                feedbackText.text = "Hahahaha, the password was " + contraseñaActual;
+                StartCoroutine(DesactivarPanelDespuesDeEspera(5f, 2));
+            }
             return;
         }
 
@@ -62,13 +67,13 @@ public class AdivinaManager : MonoBehaviour
 
         if (letrasCorrectas == contraseñaActual.Length)
         {
-            feedbackText.text = "¡Felicidades! Has adivinado la contraseña, eres más listo de lo que pareces";
-            StartCoroutine(DesactivarPanelDespuesDeEspera(5f, 1));
+            feedbackText.text = "Congratulations! You've guessed the password, you're smarter than you look";
+            StartCoroutine(DesactivarPanelDespuesDeEspera(5f, 2));
         }
         else
         {
             int letrasIncorrectas = contraseñaActual.Length - letrasCorrectas;
-            feedbackText.text = "Tienes " + letrasCorrectas + " letras correctas y " + letrasIncorrectas + " letras incorrectas";
+            feedbackText.text = "You have " + letrasCorrectas + " correct lettering and " + letrasIncorrectas + " Incorrect Letters";
 
             maximoIntentos--;
 
@@ -76,8 +81,8 @@ public class AdivinaManager : MonoBehaviour
 
             if (maximoIntentos <= 0)
             {
-                feedbackText.text = "¡Jajajaja!, la contraseña era " + contraseñaActual;
-                StartCoroutine(DesactivarPanelDespuesDeEspera(5f, 1));
+                feedbackText.text = "Hahahaha, the password was " + contraseñaActual;
+                StartCoroutine(DesactivarPanelDespuesDeEspera(5f, 2));
             }
         }
     }
