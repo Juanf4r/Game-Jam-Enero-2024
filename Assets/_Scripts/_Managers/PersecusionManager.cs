@@ -6,44 +6,30 @@ using UnityEngine.UI;
 
 public class PersecusionManager : MonoBehaviour
 {
-    [Header("MiniJuego")]
     public float velocidadEnemigo = 5f;
     private Vector2 posicionInicialEnemigo;
     [SerializeField] GameObject panelFelicidades;
-    [SerializeField] GameObject PanelInicio;
-
-    [Header("Cinematica")]
-    public Transform[] ruta;
-    [SerializeField] private int indice = 0;
-    public Vector3 direccion;
-    [SerializeField] private float velocidad = 2;
+    [SerializeField] GameObject PanelDialogo;
 
     void Start()
     {
-        //Cinematica
-        transform.position = ruta[0].position;
-        //Cuando inicia el minijuego
-        StartCoroutine(Iniciador(10f));
+        posicionInicialEnemigo = transform.position;
+        MoverEnemigoAleatorio();
+        PanelDialogo.SetActive(true);
+        StartCoroutine(Dialogo(2f));
     }
 
     void Update()
     {
-        //Cinematica
-        direccion = (ruta[indice].position - transform.position).normalized;
-        transform.Translate(direccion * velocidad * Time.deltaTime);
-        if (Vector3.Distance(transform.position, ruta[indice].position) < .2f && indice < ruta.Length - 1)
-        {
-            indice++;
-        }
-        StartCoroutine(Huir(10f));
-
+        Vector2 posicionRaton = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        MoverEnemigo(posicionRaton);
     }
 
     private void OnMouseDown()
     {
         Debug.Log("Has tocado al enemigo");
-        Time.timeScale = 0f;
         panelFelicidades.SetActive(true);
+        StartCoroutine(CambioEscena(2f, 2));
     }
 
     private void MoverEnemigo(Vector2 objetivo)
@@ -57,23 +43,16 @@ public class PersecusionManager : MonoBehaviour
         transform.position = posicionAleatoria;
     }
 
-    private void MiniGame()
+    IEnumerator CambioEscena(float Espera, int Escena)
     {
-        posicionInicialEnemigo = transform.position;
-        MoverEnemigoAleatorio();
-        PanelInicio.SetActive(true);
+        yield return new WaitForSeconds(Espera);
+        panelFelicidades.SetActive(false);
+        SceneManager.LoadScene(Escena);
     }
-    IEnumerator Huir(float espera)
-    {
-        yield return new WaitForSeconds(espera);
-        //Minijuego
-        Vector2 posicionRaton = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        MoverEnemigo(posicionRaton);
-        PanelInicio.SetActive(false);
-    }
-    IEnumerator Iniciador(float tiempoEspera)
+
+    IEnumerator Dialogo(float tiempoEspera)
     {
         yield return new WaitForSeconds(tiempoEspera);
-        MiniGame();
+        PanelDialogo.SetActive(false);
     }
 }
