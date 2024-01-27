@@ -55,6 +55,16 @@ public class TimeManager : MonoBehaviour
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
+    public void WinTime(float winTime)
+    {
+        _restantTime += winTime;
+    }
+
+    public void LoseTime(float loseTime)
+    {
+        _restantTime -= loseTime;
+    }
+
     public void DestroyTimeManager()
     {
         Destroy(this.gameObject);

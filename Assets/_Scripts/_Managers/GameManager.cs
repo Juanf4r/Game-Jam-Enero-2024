@@ -13,9 +13,7 @@ public class GameManager : MonoBehaviour
 
     private PlayerInput _playerInput;
     private ControllerActions _controllerActions;
-
     private bool _stopGame;
-
 
     private void Awake()
     {
@@ -34,7 +32,6 @@ public class GameManager : MonoBehaviour
         _controllerActions = new ControllerActions();
         _controllerActions.GameController.Enable();
         _controllerActions.GameController.ExitGame.performed += EscapeButton;
-
 
         //Active Canvas
         mainCanvas.SetActive(true);
@@ -82,6 +79,11 @@ public class GameManager : MonoBehaviour
 
     #region Buttons
 
+    public void VirusButton(int scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
     public void EscapeButtonResume()
     {
         _stopGame = false;
@@ -89,9 +91,29 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void EscapeButtonSucess()
+    public void EscapeButtonSucess(int scene)
     {
-        SceneManager.LoadScene("Pantalla_Inicio");
+        SceneManager.LoadScene(scene);
+    }
+
+    public void OpenWindows()
+    {
+        //open Window 
+    }
+
+    public void CloseWindows()
+    {
+        //close Window
+    }
+
+    public void openTimer()
+    {
+
+    }
+
+    public void closeTimer()
+    {
+
     }
 
     #endregion
