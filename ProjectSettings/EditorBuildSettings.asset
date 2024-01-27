@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SeguirIcono.unity
     guid: bbf2e90d66b296949aa54ee3d95b12bc
+  - enabled: 1
+    path: Assets/Scenes/VenciditasVsVius.unity
+    guid: 68917dec41c78c748abebee1a2a82d63
+  - enabled: 1
+    path: Assets/Scenes/Ads.unity
+    guid: 11dab725aa69d634fa8bd7246863ffeb
   m_configObjects: {}

@@ -58,7 +58,7 @@ public class AdsManager : MonoBehaviour
     {
         while(true)
         {
-            Invoke(nameof(LoadAd), .5f);
+            Invoke(nameof(LoadAd), 10f);
             _iterator++;
 
             yield return new WaitForSeconds(.5f);
