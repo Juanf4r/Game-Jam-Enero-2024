@@ -51,14 +51,14 @@ public class AdsManager : MonoBehaviour
     {
         StartCoroutine(ChargeAds());
 
-        InvokeRepeating(nameof(LoadAd), 10f, 4f);
+        InvokeRepeating(nameof(LoadAd), 10f, 2.5f);
     }
 
     private IEnumerator ChargeAds()
     {
         while(true)
         {
-            Invoke(nameof(LoadAd), 10f);
+            Invoke(nameof(LoadAd), .25f);
             _iterator++;
 
             yield return new WaitForSeconds(.5f);

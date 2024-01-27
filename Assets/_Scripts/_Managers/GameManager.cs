@@ -133,18 +133,29 @@ public class GameManager : MonoBehaviour
 
     public void LoseGame()
     {
+        StartCoroutine(Lose());
+    }
+
+    private IEnumerator Lose()
+    {
         gameLost.SetActive(true);
-        Time.timeScale = 0;
+        _counterGames = 0;
         //Suena musica de Perder
+
+        yield return new WaitForSeconds(5f);
+
+        SceneManager.LoadScene(0);
     }
 
     private IEnumerator Won()
     {
         gameWin.SetActive(true);
+        _counterGames = 0;
         InicioManager.Instance.HasPlayed = true;
         SaveData();
 
-        yield return new WaitForSeconds(1f);
+        //Suena musica de Ganar
+        yield return new WaitForSeconds(5f);
 
         SceneManager.LoadScene(0);
     }
@@ -218,7 +229,7 @@ public class GameManager : MonoBehaviour
 
                 break;
 
-            case 6:
+            case 7:
 
                 if (_randomBool == true)
                 {
@@ -231,7 +242,7 @@ public class GameManager : MonoBehaviour
 
                 break;
 
-            case 7:
+            case 8:
 
                 WinGame();
 

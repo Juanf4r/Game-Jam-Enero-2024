@@ -2353,6 +2353,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCanvas: {fileID: 1579309084}
   exitPanel: {fileID: 470739716}
+  gameLost: {fileID: 0}
+  gameWin: {fileID: 0}
+  _counterGames: 0
 --- !u!4 &1153284126
 Transform:
   m_ObjectHideFlags: 0
@@ -2416,7 +2419,7 @@ MonoBehaviour:
   panelWin: {fileID: 1749149950}
   panelLose: {fileID: 2041927490}
   objectPooling: {fileID: 1731898965}
-  limitTime: 20
+  limitTime: 35
   _restantTime: 0
 --- !u!1 &1185763944
 GameObject:
