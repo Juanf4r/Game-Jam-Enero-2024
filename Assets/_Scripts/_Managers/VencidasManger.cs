@@ -18,7 +18,7 @@ public class VencidasManager : MonoBehaviour
     void Start()
     {
         clickButton.onClick.AddListener(OnClickButton);
-        currentScore = 50f;
+        currentScore = 75f;
         ResetGame();
     }
 

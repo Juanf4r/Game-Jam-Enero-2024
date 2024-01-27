@@ -602,6 +602,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
+  exitPanel: {fileID: 0}
 --- !u!1 &131233577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,6 +1214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
+  exitPanel: {fileID: 0}
 --- !u!1 &559930233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,18 +2555,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 173860253}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1033813716}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -2593,6 +2583,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1990686126}
+        m_TargetAssemblyTypeName: InicioManager, Assembly-CSharp
+        m_MethodName: EscapeButtonResume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3442,7 +3444,7 @@ Transform:
   m_GameObject: {fileID: 1514633467}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 36.98944, y: -2.5338898, z: -1.7312819}
+  m_LocalPosition: {x: 57, y: 0, z: -1.7312819}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3657,7 +3659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.15481488, g: 0.6698113, b: 0.18161191, a: 1}
+  m_Color: {r: 0.10186896, g: 0.5566038, b: 0.12598366, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3713,6 +3715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
+  exitPanel: {fileID: 173860253}
 --- !u!4 &1990686127
 Transform:
   m_ObjectHideFlags: 0
