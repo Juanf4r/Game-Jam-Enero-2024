@@ -13,7 +13,9 @@ public class GameManager : MonoBehaviour
 
     private PlayerInput _playerInput;
     private ControllerActions _controllerActions;
+    private int _counterGames = 1;
     private bool _stopGame;
+    private bool _randomBool = false;
 
     private void Awake()
     {
@@ -33,13 +35,93 @@ public class GameManager : MonoBehaviour
         _controllerActions.GameController.Enable();
         _controllerActions.GameController.ExitGame.performed += EscapeButton;
 
+        _stopGame = false;
+        _randomBool = Random.Range(0, 2) == 0;
+
         //Active Canvas
         mainCanvas.SetActive(true);
     }
 
     private void Start()
     {
-        _stopGame = false;
+        switch (_counterGames)
+        {
+            case 1:
+                    
+                StopTheAds();
+                
+                break;
+
+            case 2:
+                
+                if(_randomBool == true)
+                {
+                    GuessThePassword();
+                }
+                else
+                {
+                    FollowTheIcon();
+                }
+
+                break;
+
+            case 3:
+
+                if (_randomBool == true)
+                {
+                    ClickTheButton();
+                }
+                else
+                {
+                    StopTheAds();
+                }
+
+                break;
+
+            case 4:
+
+                if (_randomBool == true)
+                {
+                    GuessThePassword();
+                }
+                else
+                {
+                    FollowTheIcon();
+                }
+
+                break;
+
+            case 5:
+
+                if (_randomBool == true)
+                {
+                    ClickTheButton();
+                }
+                else
+                {
+                    StopTheAds();
+                }
+
+                break;
+
+            case 6:
+
+                if (_randomBool == true)
+                {
+                    GuessThePassword();
+                }
+                else
+                {
+                    FollowTheIcon();
+                }
+
+                break;
+
+            default:
+
+                Debug.Log("Error, no tiene el valor correcto");
+                break;
+        }
     }
 
     #region Input System
@@ -131,5 +213,31 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
+
+    #region Minigames
+
+    private void GuessThePassword()
+    {
+
+    }
+
+    private void StopTheAds()
+    {
+
+    }
+
+    private void FollowTheIcon()
+    {
+
+    }
+
+    private void ClickTheButton()
+    {
+
+    }
+
+
+    #endregion
+
 
 }

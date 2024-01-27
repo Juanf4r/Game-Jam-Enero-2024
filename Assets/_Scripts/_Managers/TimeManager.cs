@@ -9,13 +9,14 @@ public class TimeManager : MonoBehaviour
 {
     public static TimeManager Instance;
 
-    [SerializeField] private TextMeshProUGUI timeText;
+    //[SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private Time time;
     [SerializeField] private float limitTime;
-    
+    [SerializeField] private float _restantTime;
+
     private GameManager _gameManager;
     private bool _timeTrial = false;
-    private float _restantTime;
+    
 
     private void Awake()
     {
@@ -31,7 +32,7 @@ public class TimeManager : MonoBehaviour
 
         _gameManager = GameManager.Instance;
         _restantTime = limitTime;
-        UpdateTime();
+        //UpdateTime();
     }
 
     void Update()
@@ -48,17 +49,17 @@ public class TimeManager : MonoBehaviour
                 SceneManager.LoadScene(1);
                 _gameManager.LoseGame();
             }
-            UpdateTime();
+            //UpdateTime();
         }
     }
 
-    private void UpdateTime()
+    /*private void UpdateTime()
     {
         int minutes = Mathf.FloorToInt(_restantTime / 60);
         int seconds = Mathf.FloorToInt(_restantTime % 60);
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }
+    }*/
 
     public void WinTime(float winTime)
     {
