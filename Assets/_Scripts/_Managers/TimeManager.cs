@@ -24,6 +24,7 @@ public class TimeManager : MonoBehaviour
         else
         {
             Instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
 
         _restantTime = limitTime;
@@ -52,5 +53,10 @@ public class TimeManager : MonoBehaviour
         int seconds = Mathf.FloorToInt(_restantTime % 60);
 
         timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
+
+    public void DestroyTimeManager()
+    {
+        Destroy(this.gameObject);
     }
 }
