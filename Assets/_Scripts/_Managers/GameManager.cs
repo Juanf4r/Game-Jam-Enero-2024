@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
 
     public void EscapeButtonSucess()
     {
-        //Change Scene
+        SceneManager.LoadScene("Pantalla_Inicio");
     }
 
     #endregion

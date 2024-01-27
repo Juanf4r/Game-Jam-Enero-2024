@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &49401327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 49401329}
+  - component: {fileID: 49401328}
+  m_Layer: 0
+  m_Name: LeaderBoardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &49401328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49401327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982f19902aab01542bcae9c1dd315597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &49401329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49401327}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 799.15015, y: 535.0101, z: -29.07955}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &104699053
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,8 +3831,6 @@ GameObject:
   - component: {fileID: 1908850434}
   - component: {fileID: 1908850433}
   - component: {fileID: 1908850432}
-  - component: {fileID: 1908850431}
-  - component: {fileID: 1908850435}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -3816,18 +3858,6 @@ RectTransform:
   m_AnchoredPosition: {x: -37.5, y: -28.5}
   m_SizeDelta: {x: 37.8289, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1908850431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908850429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ff4c52b6e600241af28439797d62a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1908850432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3872,10 +3902,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1908850435}
-        m_TargetAssemblyTypeName: InicioManager, Assembly-CSharp
-        m_MethodName: cambioDeEscena
-        m_Mode: 3
+      - m_Target: {fileID: 49401328}
+        m_TargetAssemblyTypeName: LeaderBoardManager, Assembly-CSharp
+        m_MethodName: ExitScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3922,18 +3952,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908850429}
   m_CullTransparentMesh: 1
---- !u!114 &1908850435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908850429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68c21e8e3f0653742bfed1c6f0aa6d3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2049865843
 GameObject:
   m_ObjectHideFlags: 0
@@ -4095,3 +4113,4 @@ SceneRoots:
   - {fileID: 1363042175}
   - {fileID: 1806546907}
   - {fileID: 462293317}
+  - {fileID: 49401329}

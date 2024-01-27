@@ -210,7 +210,6 @@ GameObject:
   - component: {fileID: 64085919}
   - component: {fileID: 64085918}
   - component: {fileID: 64085917}
-  - component: {fileID: 64085920}
   m_Layer: 5
   m_Name: BotonStart
   m_TagString: Untagged
@@ -331,18 +330,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64085915}
   m_CullTransparentMesh: 1
---- !u!114 &64085920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 64085915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ff4c52b6e600241af28439797d62a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &104816908
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +690,6 @@ GameObject:
   - component: {fileID: 169091026}
   - component: {fileID: 169091025}
   - component: {fileID: 169091024}
-  - component: {fileID: 169091027}
   m_Layer: 5
   m_Name: BotonDeApagado
   m_TagString: Untagged
@@ -885,18 +871,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169091022}
   m_CullTransparentMesh: 1
---- !u!114 &169091027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169091022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a54266a9c95bc43adfc8ff2325fa37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &173860253
 GameObject:
   m_ObjectHideFlags: 0
@@ -3044,7 +3018,6 @@ GameObject:
   - component: {fileID: 1033813720}
   - component: {fileID: 1033813719}
   - component: {fileID: 1033813718}
-  - component: {fileID: 1033813721}
   m_Layer: 5
   m_Name: LeaderBoard
   m_TagString: Untagged
@@ -3166,18 +3139,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033813716}
   m_CullTransparentMesh: 1
---- !u!114 &1033813721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033813716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32ff4c52b6e600241af28439797d62a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1107523811
 GameObject:
   m_ObjectHideFlags: 0
