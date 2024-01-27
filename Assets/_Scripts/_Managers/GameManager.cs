@@ -118,4 +118,18 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region Win or Lose
+
+    public void WinGame()
+    {
+
+    }
+
+    public void LoseGame()
+    {
+
+    }
+
+    #endregion
+
 }

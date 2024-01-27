@@ -27,7 +27,7 @@ public class AdivinaManager : MonoBehaviour
 
     private void ResetGame()
     {
-        feedbackText.text = "Intenta adivinar la palabra";
+        feedbackText.text = "Well well, look at us here, out of your own computer, HAHAHAHA, good luck typing your NEW PASSWORD HAHAHAHAHAHA";
         inputField.text = "";
         maximoIntentos = 6;
         UpdateIntentosText();
@@ -46,7 +46,7 @@ public class AdivinaManager : MonoBehaviour
         {
             maximoIntentos--;
             UpdateIntentosText();
-            feedbackText.text = "La palabra debe tener " + contraseñaActual.Length + " letras";
+            feedbackText.text = "The word you are looking for must have " + contraseñaActual.Length + " letters, you fool!";
             return;
         }
 
@@ -62,13 +62,13 @@ public class AdivinaManager : MonoBehaviour
 
         if (letrasCorrectas == contraseñaActual.Length)
         {
-            feedbackText.text = "¡Felicidades! Has adivinado la contraseña, eres más listo de lo que pareces";
-            StartCoroutine(DesactivarPanelDespuesDeEspera(5f, 1));
+            feedbackText.text = "¡Congrats! You've guess the word..., with pure luck!";
+            StartCoroutine(DesactivarPanelDespuesDeEspera(3f, 2));  
         }
         else
         {
             int letrasIncorrectas = contraseñaActual.Length - letrasCorrectas;
-            feedbackText.text = "Tienes " + letrasCorrectas + " letras correctas y " + letrasIncorrectas + " letras incorrectas";
+            feedbackText.text = "You've got " + letrasCorrectas + " correct letters & " + letrasIncorrectas + " incorrect letters";
 
             maximoIntentos--;
 
@@ -76,8 +76,8 @@ public class AdivinaManager : MonoBehaviour
 
             if (maximoIntentos <= 0)
             {
-                feedbackText.text = "¡Jajajaja!, la contraseña era " + contraseñaActual;
-                StartCoroutine(DesactivarPanelDespuesDeEspera(5f, 1));
+                feedbackText.text = "¡HAHAHAHAHA!, The PASSWORD Was " + contraseñaActual;
+                StartCoroutine(DesactivarPanelDespuesDeEspera(3f, 2));
             }
         }
     }

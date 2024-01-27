@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private Time time;
     [SerializeField] private float limitTime;
     
+    private GameManager _gameManager;
     private bool _timeTrial = false;
     private float _restantTime;
 
@@ -27,6 +29,7 @@ public class TimeManager : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
 
+        _gameManager = GameManager.Instance;
         _restantTime = limitTime;
         UpdateTime();
     }
@@ -41,7 +44,9 @@ public class TimeManager : MonoBehaviour
             {
                 _restantTime = 0.0f;
                 _timeTrial = true;
-                //You Lose!
+
+                SceneManager.LoadScene(1);
+                _gameManager.LoseGame();
             }
             UpdateTime();
         }
