@@ -1,0 +1,45 @@
+{
+    "name": "Controller Actions",
+    "maps": [
+        {
+            "name": "GameController",
+            "id": "dbdc81fe-003e-4e7b-8522-424b3bb33db2",
+            "actions": [
+                {
+                    "name": "ExitGame",
+                    "type": "Button",
+                    "id": "6af9ecb6-1a82-4a20-acbd-12e3568c30c2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "53e6cb7d-c46b-44f0-a811-cd83a0da8500",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExitGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "de19b708-b78d-4f7b-9c65-69e969c2ed7b",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ExitGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
