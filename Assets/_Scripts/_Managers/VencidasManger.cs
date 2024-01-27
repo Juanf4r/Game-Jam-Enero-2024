@@ -28,12 +28,12 @@ public class VencidasManager : MonoBehaviour
         currentScore = Mathf.Clamp(currentScore, 0f, _maxScore);
         scoreSlider.value = currentScore;
 
-        if (currentScore <= 0)
+        if (currentScore <= 0.01f) 
         {
             Debug.Log("Perdiste");
             PanelPerdedor.SetActive(true);
             TimeManager.Instance.LoseTime(30f);
-            StartCoroutine(Cambio(5f, 2));
+            StartCoroutine(Cambio(6f, 2));
         }
     }
 
