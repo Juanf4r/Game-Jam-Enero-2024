@@ -10,7 +10,7 @@ public class VencidasManager : MonoBehaviour
     public GameObject PanelGanador;
     public GameObject PanelPerdedor;
     private float _maxScore = 150f;
-    private float _scoreDecreaseRate = 40f;
+    private float _scoreDecreaseRate = 25f;
     private float _clickValue = 6f;
 
     private float currentScore;
@@ -58,6 +58,6 @@ public class VencidasManager : MonoBehaviour
     public void ResetGame()
     {
         PanelGanador.SetActive(false);
-        PanelPerdedor.SetActive(true);
+        PanelPerdedor.SetActive(false);
     }
 }
