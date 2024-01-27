@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LeaderBoard.unity
     guid: df41036f384610046a936afaf0fb269a
+  - enabled: 1
+    path: "Assets/Scenes/AdivinarContrase\xF1a.unity"
+    guid: ecde73d9fd779b2449b5b007ca4a0980
+  - enabled: 1
+    path: Assets/Scenes/SeguirIcono.unity
+    guid: bbf2e90d66b296949aa54ee3d95b12bc
   m_configObjects: {}
