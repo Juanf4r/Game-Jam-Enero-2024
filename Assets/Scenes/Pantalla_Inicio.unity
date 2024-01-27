@@ -508,8 +508,9 @@ GameObject:
   m_Component:
   - component: {fileID: 123342006}
   - component: {fileID: 123342007}
+  - component: {fileID: 123342008}
   m_Layer: 5
-  m_Name: Sonido
+  m_Name: Musica
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -587,7 +588,33 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 123342008}
+        m_TargetAssemblyTypeName: InicioManager, Assembly-CSharp
+        m_MethodName: ChangeVolumeM
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &123342008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123342005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c21e8e3f0653742bfed1c6f0aa6d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonidoSlider: {fileID: 477284683}
+  musicaSlider: {fileID: 123342007}
 --- !u!1 &131233577
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,6 +823,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 714372035}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 131233577}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &169091025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -992,8 +1043,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 959683931}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1081,6 +1132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 477284682}
   - component: {fileID: 477284683}
+  - component: {fileID: 477284684}
   m_Layer: 5
   m_Name: Sonido
   m_TagString: Untagged
@@ -1107,8 +1159,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 89.618}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.1, y: -0.2145}
-  m_SizeDelta: {x: 93.5688, y: 16.0531}
+  m_AnchoredPosition: {x: 0.3, y: -0.2226}
+  m_SizeDelta: {x: 93.5688, y: 18.4692}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &477284683
 MonoBehaviour:
@@ -1157,10 +1209,36 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 477284684}
+        m_TargetAssemblyTypeName: InicioManager, Assembly-CSharp
+        m_MethodName: ChangeVolumeS
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &477284684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477284681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c21e8e3f0653742bfed1c6f0aa6d3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonidoSlider: {fileID: 477284683}
+  musicaSlider: {fileID: 123342007}
 --- !u!1 &559930233
 GameObject:
   m_ObjectHideFlags: 0
@@ -3112,7 +3190,6 @@ GameObject:
   - component: {fileID: 1107523816}
   - component: {fileID: 1107523815}
   - component: {fileID: 1107523814}
-  - component: {fileID: 1107523813}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -3139,18 +3216,6 @@ RectTransform:
   m_AnchoredPosition: {x: 152.6, y: -50.3}
   m_SizeDelta: {x: 75.8372, y: 49.0682}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1107523813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107523811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86a54266a9c95bc43adfc8ff2325fa37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1107523814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3445,7 +3510,7 @@ RectTransform:
   m_Father: {fileID: 2049198241}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3628,6 +3693,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c21e8e3f0653742bfed1c6f0aa6d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sonidoSlider: {fileID: 477284683}
+  musicaSlider: {fileID: 123342007}
 --- !u!4 &1990686127
 Transform:
   m_ObjectHideFlags: 0
