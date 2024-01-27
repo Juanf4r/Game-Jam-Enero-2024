@@ -603,6 +603,9 @@ MonoBehaviour:
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
   exitPanel: {fileID: 0}
+  leaderBoardObject: {fileID: 0}
+  leaderBoardButton: {fileID: 0}
+  HasPlayed: 0
 --- !u!1 &131233577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1218,9 @@ MonoBehaviour:
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
   exitPanel: {fileID: 0}
+  leaderBoardObject: {fileID: 0}
+  leaderBoardButton: {fileID: 0}
+  HasPlayed: 0
 --- !u!1 &559930233
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,6 +3722,9 @@ MonoBehaviour:
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
   exitPanel: {fileID: 173860253}
+  leaderBoardObject: {fileID: 0}
+  leaderBoardButton: {fileID: 1033813718}
+  HasPlayed: 0
 --- !u!4 &1990686127
 Transform:
   m_ObjectHideFlags: 0

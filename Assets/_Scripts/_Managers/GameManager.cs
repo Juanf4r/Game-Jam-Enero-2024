@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameLost;
     [SerializeField] private GameObject gameWin;
 
+    private InicioManager _inicioManager;
     private PlayerInput _playerInput;
     private ControllerActions _controllerActions;
     public int _counterGames;
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
+        _inicioManager = InicioManager.Instance;
         //Input System
         _playerInput = GetComponent<PlayerInput>();
         _controllerActions = new ControllerActions();
@@ -39,7 +42,7 @@ public class GameManager : MonoBehaviour
 
         _counterGames = 0;
         _stopGame = false;
-        _randomBool = Random.Range(0, 2) == 0;
+        _randomBool = UnityEngine.Random.Range(0, 2) == 0;
 
         //Active Canvas
         mainCanvas.SetActive(true);
@@ -138,8 +141,10 @@ public class GameManager : MonoBehaviour
     private IEnumerator Won()
     {
         gameWin.SetActive(true);
-        InicioManager.Instance._hasPlayed = true;
-        yield return new WaitForSeconds(5f);
+        InicioManager.Instance.HasPlayed = true;
+        SaveData();
+
+        yield return new WaitForSeconds(1f);
 
         SceneManager.LoadScene(0);
     }
@@ -265,6 +270,7 @@ public class GameManager : MonoBehaviour
 
     private void LoadData()
     {
+
         if (PlayerPrefs.HasKey("counterGames"))
         {
             _counterGames = PlayerPrefs.GetInt("counterGames");
@@ -274,15 +280,13 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("counterGames", 0);
             _counterGames = PlayerPrefs.GetInt("counterGames");
         }
-
-        _counterGames = PlayerPrefs.GetInt("counterGames");
     }
 
     private void SaveData()
     {
         PlayerPrefs.SetInt("counterGames", _counterGames);
+        PlayerPrefs.SetInt("_hasPlayed", Convert.ToInt32(_inicioManager.HasPlayed));
     }
 
     #endregion
-
 }

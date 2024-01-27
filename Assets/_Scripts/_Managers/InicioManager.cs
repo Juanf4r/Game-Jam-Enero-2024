@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -16,7 +17,8 @@ public class InicioManager : MonoBehaviour
     private PlayerInput _playerInput;
     private ControllerActions _controllerActions;
     private bool _stopGame;
-    public bool _hasPlayed = false;
+
+    public bool HasPlayed;
 
     private void Awake()
     {
@@ -30,17 +32,11 @@ public class InicioManager : MonoBehaviour
         }
 
         _stopGame = false;
-
+        leaderBoardButton.interactable = HasPlayed;
         _playerInput = GetComponent<PlayerInput>();
         _controllerActions = new ControllerActions();
         _controllerActions.GameController.Enable();
         _controllerActions.GameController.ExitGame.performed += EscapeButton;
-
-        if(_hasPlayed == true)
-        {
-            leaderBoardObject.SetActive(true);
-            leaderBoardButton.interactable = true;
-        }
     }
 
     private void Start()
@@ -138,6 +134,16 @@ public class InicioManager : MonoBehaviour
 
     private void Load()
     {
+        if (PlayerPrefs.HasKey("_hasPlayed"))
+        {
+            HasPlayed = Convert.ToBoolean(PlayerPrefs.GetInt("_hasPlayed"));
+        }
+        else
+        {
+            PlayerPrefs.SetInt("_hasPlayed", 0);
+            HasPlayed = Convert.ToBoolean(PlayerPrefs.GetInt("_hasPlayed"));
+        }
+
         _sonidoSlider.value = PlayerPrefs.GetFloat("SoundVolume");
         _musicaSlider.value = PlayerPrefs.GetFloat("MusicVolume");
     }

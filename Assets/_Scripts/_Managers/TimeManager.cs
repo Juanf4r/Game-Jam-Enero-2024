@@ -17,7 +17,6 @@ public class TimeManager : MonoBehaviour
     private GameManager _gameManager;
     private bool _timeTrial = false;
     
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
