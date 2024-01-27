@@ -44,6 +44,8 @@ public class AdivinaManager : MonoBehaviour
 
         if (guess.Length != contraseñaActual.Length)
         {
+            maximoIntentos--;
+            UpdateIntentosText();
             feedbackText.text = "La palabra debe tener " + contraseñaActual.Length + " letras";
             return;
         }
