@@ -1,12 +1,10 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class PersecusionManager : MonoBehaviour
 {
-    public float velocidadEnemigo = 5f;
+    private float _velocidadEnemigo = 5f;
     private Vector2 posicionInicialEnemigo;
     [SerializeField] GameObject panelFelicidades;
     [SerializeField] GameObject PanelDialogo;
@@ -17,6 +15,7 @@ public class PersecusionManager : MonoBehaviour
         MoverEnemigoAleatorio();
         PanelDialogo.SetActive(true);
         StartCoroutine(Dialogo(2f));
+        ResetGame();
     }
 
     void Update()
@@ -27,14 +26,14 @@ public class PersecusionManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("Has tocado al enemigo");
         panelFelicidades.SetActive(true);
         StartCoroutine(CambioEscena(2f, 2));
+        TimeManager.Instance.WinTime(45f);
     }
 
     private void MoverEnemigo(Vector2 objetivo)
     {
-        transform.position = Vector2.MoveTowards(transform.position, objetivo, -velocidadEnemigo * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, objetivo, -_velocidadEnemigo * Time.deltaTime);
     }
 
     private void MoverEnemigoAleatorio()
@@ -54,5 +53,10 @@ public class PersecusionManager : MonoBehaviour
     {
         yield return new WaitForSeconds(tiempoEspera);
         PanelDialogo.SetActive(false);
+    }
+
+    public void ResetGame()
+    {
+        panelFelicidades.SetActive(false);
     }
 }
