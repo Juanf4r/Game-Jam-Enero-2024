@@ -600,8 +600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c21e8e3f0653742bfed1c6f0aa6d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonidoSlider: {fileID: 477284683}
-  musicaSlider: {fileID: 123342007}
+  _sonidoSlider: {fileID: 0}
+  _musicaSlider: {fileID: 0}
 --- !u!1 &131233577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,8 +1211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c21e8e3f0653742bfed1c6f0aa6d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonidoSlider: {fileID: 477284683}
-  musicaSlider: {fileID: 123342007}
+  _sonidoSlider: {fileID: 0}
+  _musicaSlider: {fileID: 0}
 --- !u!1 &559930233
 GameObject:
   m_ObjectHideFlags: 0
@@ -3654,8 +3654,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c21e8e3f0653742bfed1c6f0aa6d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonidoSlider: {fileID: 477284683}
-  musicaSlider: {fileID: 123342007}
+  _sonidoSlider: {fileID: 477284683}
+  _musicaSlider: {fileID: 123342007}
 --- !u!4 &1990686127
 Transform:
   m_ObjectHideFlags: 0

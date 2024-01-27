@@ -152,6 +152,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 982f19902aab01542bcae9c1dd315597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+  - {fileID: 11400000, guid: 9ab2c0296d751d6429766e3462ccab27, type: 2}
+  - {fileID: 11400000, guid: 2e492d3ddd0449a4d95b106230e9fa94, type: 2}
+  - {fileID: 11400000, guid: 92dcf7a32ef88ba4fb44d4870fcb1137, type: 2}
+  - {fileID: 11400000, guid: 3838efb906a16b648bb23143c8156240, type: 2}
+  - {fileID: 11400000, guid: 850564a14a1e9c243935774cd84459bb, type: 2}
+  nameStats:
+  - {fileID: 1616321716}
+  - {fileID: 558609561}
+  - {fileID: 716532074}
+  - {fileID: 797658977}
+  - {fileID: 618393008}
+  timeStats:
+  - {fileID: 104699055}
+  - {fileID: 1513471964}
+  - {fileID: 1761001455}
+  - {fileID: 695305480}
+  - {fileID: 886285299}
 --- !u!4 &49401329
 Transform:
   m_ObjectHideFlags: 0
