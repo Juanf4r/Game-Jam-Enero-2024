@@ -138,7 +138,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator Won()
     {
         gameWin.SetActive(true);
-
+        InicioManager.Instance._hasPlayed = true;
         yield return new WaitForSeconds(5f);
 
         SceneManager.LoadScene(0);
@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
 
     public void StartMiniGame()
     {
-        _counterGames += _counterGames + 1;
+        _counterGames += 1;
         SaveData(); 
 
         switch (_counterGames)

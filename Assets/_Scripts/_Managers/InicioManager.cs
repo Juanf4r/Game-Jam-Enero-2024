@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class InicioManager : MonoBehaviour
 {
+    public static InicioManager Instance;
+
     [SerializeField] private Slider _sonidoSlider;
     [SerializeField] private Slider _musicaSlider;
     [SerializeField] private GameObject exitPanel;
@@ -14,10 +16,19 @@ public class InicioManager : MonoBehaviour
     private PlayerInput _playerInput;
     private ControllerActions _controllerActions;
     private bool _stopGame;
-    private bool _hasPlayed = false;
+    public bool _hasPlayed = false;
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+
         _stopGame = false;
 
         _playerInput = GetComponent<PlayerInput>();
@@ -27,7 +38,6 @@ public class InicioManager : MonoBehaviour
 
         if(_hasPlayed == true)
         {
-
             leaderBoardObject.SetActive(true);
             leaderBoardButton.interactable = true;
         }
