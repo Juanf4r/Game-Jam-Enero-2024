@@ -4,17 +4,8 @@ using UnityEngine.UI;
 
 public class InicioManager : MonoBehaviour
 {
-    [SerializeField] Slider sonidoSlider;
-    [SerializeField] Slider musicaSlider;
-    public void Exit()
-    {
-        Application.Quit();
-    }
-
-    public void cambioDeEscena(int Escena)
-    {
-        SceneManager.LoadScene(Escena);
-    }
+    [SerializeField] private Slider _sonidoSlider;
+    [SerializeField] private Slider _musicaSlider;
 
     private void Start()
     {
@@ -27,6 +18,7 @@ public class InicioManager : MonoBehaviour
         {
             Load();
         }
+
         if (!PlayerPrefs.HasKey("MusicVolume"))
         {
             PlayerPrefs.SetFloat("MusicVolume", 1);
@@ -37,28 +29,38 @@ public class InicioManager : MonoBehaviour
         }
     }
 
+    public void Exit()
+    {
+        Application.Quit();
+    }
+
+    public void cambioDeEscena(int Escena)
+    {
+        SceneManager.LoadScene(Escena);
+    }
+
     public void ChangeVolumeS()
     {
-        AudioListener.volume = sonidoSlider.value;
+        AudioListener.volume = _sonidoSlider.value;
         SaveS();
     }
     public void ChangeVolumeM()
     {
-        AudioListener.volume = musicaSlider.value;
+        AudioListener.volume = _musicaSlider.value;
         SaveM();
     }
     private void Load()
     {
-        sonidoSlider.value = PlayerPrefs.GetFloat("SoundVolume");
-        musicaSlider.value = PlayerPrefs.GetFloat("MusicVolume");
+        _sonidoSlider.value = PlayerPrefs.GetFloat("SoundVolume");
+        _musicaSlider.value = PlayerPrefs.GetFloat("MusicVolume");
     }
     private void SaveS()
     {
-        PlayerPrefs.SetFloat("SoundVolume", sonidoSlider.value);
+        PlayerPrefs.SetFloat("SoundVolume", _sonidoSlider.value);
     }
     private void SaveM()
     {
-        PlayerPrefs.SetFloat("MusicVolume", musicaSlider.value);
+        PlayerPrefs.SetFloat("MusicVolume", _musicaSlider.value);
     }
 
 }
