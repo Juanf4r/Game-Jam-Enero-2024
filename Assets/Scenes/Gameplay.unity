@@ -458,23 +458,25 @@ MonoBehaviour:
   PanelDialogo6: {fileID: 1340616084}
   lines: []
   linesPanel1:
-  - esta es una prueba de las
-  - liineas 1
+  - 'Well, well... It seems there are still people falling for these traps, hehehe. '
+  - 'Since I''m already here, I think it would be nice to get the party started,
+    don''t you think? '
+  - HAHAHAHAHAHA
   linesPanel2:
-  - 'esta es una prueba de las '
-  - lineas 2
+  - Well, maybe I underestimated you... WHO AM I KIDDING?
+  - HAHAHAHAHA
   linesPanel3:
-  - esta es una prueba de lineas
-  - lineas 3
+  - 'Do you really think you can delete me? I''ve been around for a long time, I''ve
+    faced so many antivirus, assistants, and programmers, and none have managed to
+    get rid of me. '
   linesPanel4:
-  - esta es una prueba de lineas
-  - lineas 4
+  - 'You know, the screen is getting more amusing each time, Why not let it finish? '
   linesPanel5:
-  - esta es una prueba de lineas
-  - lineas 5
+  - 'Maybe you''re just old enough to beat me, you have to be at least born before
+    ''93, or am I losing to a kid? :P '
   linesPanel6:
-  - esta es una prueba de lineas
-  - lineas 6
+  - Look last chance, if you succeed in guessing this I think there's nothing more
+    I can do :c
   textSpeed: 0.1
   contador: 0
 --- !u!4 &288802944

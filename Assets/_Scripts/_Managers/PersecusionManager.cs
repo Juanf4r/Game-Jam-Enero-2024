@@ -4,22 +4,42 @@ using UnityEngine.SceneManagement;
 
 public class PersecusionManager : MonoBehaviour
 {
-    [SerializeField] private GameObject panelFelicidades;
-    private Vector2 _posicionInicialEnemigo;
     private float _velocidadEnemigo = 5f;
-    
-    private void Start()
+    private Vector2 posicionInicialEnemigo;
+    [SerializeField] GameObject panelFelicidades;
+    [SerializeField] GameObject panelPerdedor; 
+    //[SerializeField] GameObject PanelDialogo;
+
+    private float _tiempoRestante;
+    [SerializeField] private float _tiempoLimite;
+    private bool _timeTrial;
+
+
+    void Start()
     {
-        _posicionInicialEnemigo = transform.position;
+        posicionInicialEnemigo = transform.position;
         MoverEnemigoAleatorio();
+        _tiempoRestante = _tiempoLimite;
+        //PanelDialogo.SetActive(true);
         StartCoroutine(Dialogo(2f));
         ResetGame();
     }
 
-    private void Update()
+    void Update()
     {
         Vector2 posicionRaton = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         MoverEnemigo(posicionRaton);
+        if (_timeTrial == false)
+        {
+            _tiempoRestante -= Time.deltaTime;
+
+            if (_tiempoRestante <= 0.0f)
+            {
+                _tiempoRestante = 0.0f;
+                _timeTrial = true;
+                panelPerdedor.SetActive(true);
+            }
+        }
     }
 
     private void OnMouseDown()
@@ -40,16 +60,17 @@ public class PersecusionManager : MonoBehaviour
         transform.position = posicionAleatoria;
     }
 
-    private IEnumerator CambioEscena(float Espera, int Escena)
+    IEnumerator CambioEscena(float Espera, int Escena)
     {
         yield return new WaitForSeconds(Espera);
         panelFelicidades.SetActive(false);
         SceneManager.LoadScene(Escena);
     }
 
-    private IEnumerator Dialogo(float tiempoEspera)
+    IEnumerator Dialogo(float tiempoEspera)
     {
         yield return new WaitForSeconds(tiempoEspera);
+        //PanelDialogo.SetActive(false);
     }
 
     public void ResetGame()
