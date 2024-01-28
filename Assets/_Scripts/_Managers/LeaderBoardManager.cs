@@ -37,34 +37,6 @@ public class LeaderBoardManager : MonoBehaviour
         }
     }
 
-    #region SaveSO
-
-    public void SaveData(float timeLeft, string userName)
-    {
-        for(int i = 0; i < stats.Length; i++)
-        {
-            if (stats[i].time >= timeLeft)
-            {
-                //En caso de que haya un valor menor que el que se consiguio, este se recorre abajo
-                stats[i + 1].time = stats[i].time;
-                stats[i + 1].playerName = stats[i].playerName;
-
-                //Se reemplaza el valor viejo con el nuevo
-                stats[i].time = timeLeft;
-                stats[i].playerName = userName;
-
-                stats[5].time = 0;
-                stats[5].playerName = "";
-            }
-            else if (stats[i].time <= timeLeft)
-            {
-                //Tu progreso fue muy bajo, sigue jugando
-            }
-        }
-    }
-
-    #endregion
-
     #region Exit
 
     public void ExitScene()

@@ -1138,17 +1138,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6773ccc6ddd043f44a16c779ced1f941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   mainCanvas: {fileID: 1579309084}
   exitPanel: {fileID: 470739716}
   gameLost: {fileID: 0}
   gameWin: {fileID: 0}
+  antiVirus: {fileID: 0}
+  antiVirus2: {fileID: 0}
   background: {fileID: 1891090159}
-  backgroundSprite: {fileID: 0}
   backgroundImages:
-  - {fileID: 21300000, guid: 0e7838234acdc7b4d97ff0464ae2a1f0, type: 3}
-  - {fileID: 21300000, guid: 946528fc2826be84eaf2488a0b016869, type: 3}
-  - {fileID: 21300000, guid: 5e724b5e336eea84b893a0221fe76ca9, type: 3}
   - {fileID: 21300000, guid: a76b89a28c3b3f04391d12b8631bd23c, type: 3}
+  - {fileID: 21300000, guid: a76b89a28c3b3f04391d12b8631bd23c, type: 3}
+  - {fileID: 21300000, guid: 5e724b5e336eea84b893a0221fe76ca9, type: 3}
+  - {fileID: 21300000, guid: 5e724b5e336eea84b893a0221fe76ca9, type: 3}
+  - {fileID: 21300000, guid: 946528fc2826be84eaf2488a0b016869, type: 3}
+  - {fileID: 21300000, guid: 946528fc2826be84eaf2488a0b016869, type: 3}
+  - {fileID: 21300000, guid: 0e7838234acdc7b4d97ff0464ae2a1f0, type: 3}
   counterGames: 0
 --- !u!4 &1153284126
 Transform:
@@ -1620,6 +1631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   limitTime: 240
+  TimeTrial: 0
   restantTime: 0
 --- !u!4 &1687234121
 Transform:

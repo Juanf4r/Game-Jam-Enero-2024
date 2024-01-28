@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PersecusionManager : MonoBehaviour
 {
-    private float _velocidadEnemigo = 7f;
+    private float _velocidadEnemigo = 6f;
     private Vector2 posicionInicialEnemigo;
     [SerializeField] GameObject panelFelicidades;
     [SerializeField] GameObject panelPerdedor; 
@@ -22,10 +22,14 @@ public class PersecusionManager : MonoBehaviour
         ResetGame();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         Vector2 posicionRaton = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         MoverEnemigo(posicionRaton);
+    }
+
+    private void Update()
+    {
         if (_timeTrial == false)
         {
             _tiempoRestante -= Time.deltaTime;
@@ -35,6 +39,7 @@ public class PersecusionManager : MonoBehaviour
                 _tiempoRestante = 0.0f;
                 _timeTrial = true;
                 panelPerdedor.SetActive(true);
+                TimeManager.Instance.WinTime(-15f);
             }
         }
     }
@@ -43,7 +48,7 @@ public class PersecusionManager : MonoBehaviour
     {
         panelFelicidades.SetActive(true);
         StartCoroutine(CambioEscena(2f, 2));
-        TimeManager.Instance.WinTime(45f);
+        TimeManager.Instance.WinTime(15f);
     }
 
     private void MoverEnemigo(Vector2 objetivo)

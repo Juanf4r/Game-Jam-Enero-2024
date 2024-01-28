@@ -13,7 +13,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private Time time;
     [SerializeField] private float limitTime;
     private GameManager _gameManager;
-    private bool _timeTrial = false;
+    public bool TimeTrial = false;
 
     public float restantTime;
 
@@ -35,27 +35,14 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
-        if (_timeTrial == false)
+        if (TimeTrial == false)
         {
             restantTime -= Time.deltaTime;
-
-            if(restantTime <= 200f && restantTime >= 140f)
-            {
-                _gameManager.Background1();
-            }
-            else if (restantTime <= 140f && restantTime >= 80f)
-            {
-                _gameManager.Background2();
-            }
-            else if(restantTime <= 80f && restantTime >= 35f)
-            {
-                _gameManager.Background3();
-            }
             
             if (restantTime <= 0.0f)
             {
                 restantTime = 0.0f;
-                _timeTrial = true;
+                TimeTrial = true;
 
                 SceneManager.LoadScene(1);
                 _gameManager.LoseGame();
