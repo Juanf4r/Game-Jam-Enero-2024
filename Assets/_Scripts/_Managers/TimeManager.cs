@@ -12,11 +12,11 @@ public class TimeManager : MonoBehaviour
     //[SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private Time time;
     [SerializeField] private float limitTime;
-    public float restantTime;
-
     private GameManager _gameManager;
     private bool _timeTrial = false;
-    
+
+    public float restantTime;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -31,7 +31,6 @@ public class TimeManager : MonoBehaviour
 
         _gameManager = GameManager.Instance;
         restantTime = limitTime;
-        //UpdateTime();
     }
 
     void Update()
@@ -40,18 +39,17 @@ public class TimeManager : MonoBehaviour
         {
             restantTime -= Time.deltaTime;
 
-            if(restantTime <= 235f && restantTime >= 140f)
+            if(restantTime <= 200f && restantTime >= 140f)
             {
-                Debug.Log("Entre");
-                GameManager.Instance.Background1();
+                _gameManager.Background1();
             }
             else if (restantTime <= 140f && restantTime >= 80f)
             {
-                GameManager.Instance.Background2();
+                _gameManager.Background2();
             }
             else if(restantTime <= 80f && restantTime >= 35f)
             {
-                GameManager.Instance.Background3();
+                _gameManager.Background3();
             }
             
             if (restantTime <= 0.0f)
@@ -62,17 +60,8 @@ public class TimeManager : MonoBehaviour
                 SceneManager.LoadScene(1);
                 _gameManager.LoseGame();
             }
-            //UpdateTime();
         }
     }
-
-    /*private void UpdateTime()
-    {
-        int minutes = Mathf.FloorToInt(_restantTime / 60);
-        int seconds = Mathf.FloorToInt(_restantTime % 60);
-
-        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }*/
 
     public void WinTime(float winTime)
     {

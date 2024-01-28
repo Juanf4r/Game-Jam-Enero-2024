@@ -29,7 +29,10 @@ public class LeaderBoardManager : MonoBehaviour
 
         for(int i  = 0; i < stats.Length - 1; i++)
         {
-            timeStats[i].text = stats[i].time.ToString("");
+            int minutes = Mathf.FloorToInt(stats[i].time / 60);
+            int seconds = Mathf.FloorToInt(stats[i].time % 60);
+            
+            timeStats[i].text = string.Format("{0:00}:{1:00}", minutes, seconds);
             nameStats[i].text = stats[i].playerName;
         }
     }

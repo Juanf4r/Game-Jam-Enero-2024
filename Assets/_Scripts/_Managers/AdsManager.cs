@@ -14,19 +14,18 @@ public class AdsManager : MonoBehaviour
     [SerializeField] private float limitTime;
     private Vector2 _canvasSize;
     private ObjectPool _objectPool;
-
-    public float _restantTime;
     private int _iterator;
     private bool _winGame;
     private bool _timeTrial;
 
-
+    public float restantTime;
+    
     private void Start()
     {
         _objectPool = ObjectPool.Instance;
         _timeTrial = false;
         _winGame = false;
-        _restantTime = limitTime;
+        restantTime = limitTime;
         
         StartGame();  
     }
@@ -35,11 +34,11 @@ public class AdsManager : MonoBehaviour
     {
         if (_timeTrial == false)
         {
-            _restantTime -= Time.deltaTime;
+            restantTime -= Time.deltaTime;
 
-            if (_restantTime <= 0.0f)
+            if (restantTime <= 0.0f)
             {
-                _restantTime = 0.0f;
+                restantTime = 0.0f;
                 _timeTrial = true;
 
                 StartCoroutine(StopGame()); 

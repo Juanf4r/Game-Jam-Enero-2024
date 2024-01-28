@@ -4,21 +4,19 @@ using UnityEngine.SceneManagement;
 
 public class PersecusionManager : MonoBehaviour
 {
+    [SerializeField] private GameObject panelFelicidades;
+    private Vector2 _posicionInicialEnemigo;
     private float _velocidadEnemigo = 5f;
-    private Vector2 posicionInicialEnemigo;
-    [SerializeField] GameObject panelFelicidades;
-    //[SerializeField] GameObject PanelDialogo;
-
-    void Start()
+    
+    private void Start()
     {
-        posicionInicialEnemigo = transform.position;
+        _posicionInicialEnemigo = transform.position;
         MoverEnemigoAleatorio();
-        //PanelDialogo.SetActive(true);
         StartCoroutine(Dialogo(2f));
         ResetGame();
     }
 
-    void Update()
+    private void Update()
     {
         Vector2 posicionRaton = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         MoverEnemigo(posicionRaton);
@@ -42,17 +40,16 @@ public class PersecusionManager : MonoBehaviour
         transform.position = posicionAleatoria;
     }
 
-    IEnumerator CambioEscena(float Espera, int Escena)
+    private IEnumerator CambioEscena(float Espera, int Escena)
     {
         yield return new WaitForSeconds(Espera);
         panelFelicidades.SetActive(false);
         SceneManager.LoadScene(Escena);
     }
 
-    IEnumerator Dialogo(float tiempoEspera)
+    private IEnumerator Dialogo(float tiempoEspera)
     {
         yield return new WaitForSeconds(tiempoEspera);
-        //PanelDialogo.SetActive(false);
     }
 
     public void ResetGame()

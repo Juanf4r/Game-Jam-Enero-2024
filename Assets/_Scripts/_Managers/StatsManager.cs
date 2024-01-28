@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 public class StatsManager : MonoBehaviour
 {
     public static StatsManager Instance;
+
+    [HideInInspector] public string playerName;
     public TMP_InputField username;
-    public string playerName;
     public UIManager uiManager;
 
     private void Awake()
