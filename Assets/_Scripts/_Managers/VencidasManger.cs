@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class VencidasManager : MonoBehaviour
 {
+    [SerializeField] private GameObject PanelPelea;
     [SerializeField] private Button clickButton;
     [SerializeField] private Slider scoreSlider;
     [SerializeField] private GameObject PanelGanador;
     [SerializeField] private GameObject PanelPerdedor;
     private float _maxScore = 150f;
-    private float _scoreDecreaseRate = 25f;
-    private float _clickValue = 6f;
+    private float _scoreDecreaseRate = 20f;
+    private float _clickValue = 5f;
     private float currentScore;
     private bool _update = true;
 
@@ -50,8 +51,10 @@ public class VencidasManager : MonoBehaviour
         {
             Debug.Log("¡Ganaste!");
             PanelGanador.SetActive(true);
+            PanelPelea.SetActive(false);
             StartCoroutine(Cambio(4f, 2));
             TimeManager.Instance.WinTime(45f);
+
         }
     }
     IEnumerator Cambio(float tiempoEspera, int Escena)
