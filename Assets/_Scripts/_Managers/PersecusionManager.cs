@@ -7,13 +7,13 @@ public class PersecusionManager : MonoBehaviour
     private float _velocidadEnemigo = 5f;
     private Vector2 posicionInicialEnemigo;
     [SerializeField] GameObject panelFelicidades;
-    [SerializeField] GameObject PanelDialogo;
+    //[SerializeField] GameObject PanelDialogo;
 
     void Start()
     {
         posicionInicialEnemigo = transform.position;
         MoverEnemigoAleatorio();
-        PanelDialogo.SetActive(true);
+        //PanelDialogo.SetActive(true);
         StartCoroutine(Dialogo(2f));
         ResetGame();
     }
@@ -52,7 +52,7 @@ public class PersecusionManager : MonoBehaviour
     IEnumerator Dialogo(float tiempoEspera)
     {
         yield return new WaitForSeconds(tiempoEspera);
-        PanelDialogo.SetActive(false);
+        //PanelDialogo.SetActive(false);
     }
 
     public void ResetGame()
