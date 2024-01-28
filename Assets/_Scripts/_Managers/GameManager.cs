@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
         _controllerActions.GameController.Enable();
         _controllerActions.GameController.ExitGame.performed += EscapeButton;
 
+        gameLost.SetActive(false);
+        gameWin.SetActive(false);
         counterGames = 0;
         _stopGame = false;
         _randomBool = UnityEngine.Random.Range(0, 2) == 0;
@@ -158,19 +160,17 @@ public class GameManager : MonoBehaviour
 
     public void LoseGame()
     {
-        StartCoroutine(Lose());
+        SceneManager.LoadScene(2);
+        gameLost.SetActive(true);
+        Time.timeScale = 0;
     }
 
-    private IEnumerator Lose()
+    public void GoBackToTitleScreen()
     {
-        gameLost.SetActive(true);
         counterGames = 0;
         Prueba.Instancia.contador = 0;
         StatsManager.Instance.playerName = "";
         //Suena musica de Perder
-
-        yield return new WaitForSeconds(5f);
-
         SceneManager.LoadScene(0);
     }
 

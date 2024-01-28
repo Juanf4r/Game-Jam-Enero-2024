@@ -44,7 +44,6 @@ public class TimeManager : MonoBehaviour
                 restantTime = 0.0f;
                 TimeTrial = true;
 
-                SceneManager.LoadScene(1);
                 _gameManager.LoseGame();
             }
         }
