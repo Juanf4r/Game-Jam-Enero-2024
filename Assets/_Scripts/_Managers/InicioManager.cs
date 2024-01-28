@@ -10,8 +10,9 @@ public class InicioManager : MonoBehaviour
 
 
     [Header("Sliders")]
-    [SerializeField] private Slider _sonidoSlider;
-    [SerializeField] private Slider _musicaSlider;
+    [SerializeField] public Slider _sonidoSlider;
+    [SerializeField] public Slider _musicaSlider;
+    [SerializeField] private AudioSource Musicafondo;
 
     [Header("Buttons")]
     [SerializeField] private Button leaderBoardButton;
@@ -21,8 +22,8 @@ public class InicioManager : MonoBehaviour
     [SerializeField] private GameObject defaultCanvas;
     [SerializeField] private GameObject newGameCanvas;
 
-    private PlayerInput _playerInput;
-    private ControllerActions _controllerActions;
+    public PlayerInput _playerInput;
+    public ControllerActions _controllerActions;
     private bool _stopGame;
 
     [HideInInspector] public bool HasPlayed;
@@ -39,7 +40,7 @@ public class InicioManager : MonoBehaviour
         }
 
         _stopGame = false;
-        leaderBoardButton.interactable = HasPlayed;
+        //leaderBoardButton.interactable = HasPlayed;
         _playerInput = GetComponent<PlayerInput>();
         _controllerActions = new ControllerActions();
         _controllerActions.GameController.Enable();
@@ -48,6 +49,7 @@ public class InicioManager : MonoBehaviour
 
     private void Start()
     {
+
         if (!PlayerPrefs.HasKey("SoundVolume"))
         {
             PlayerPrefs.SetFloat("SoundVolume", 1f);
@@ -73,6 +75,8 @@ public class InicioManager : MonoBehaviour
             defaultCanvas.SetActive(false);
             newGameCanvas.SetActive(true);
         }
+
+
     }
 
     #region Input Sytem
@@ -133,6 +137,7 @@ public class InicioManager : MonoBehaviour
 
     public void ChangeVolumeM()
     {
+        //Musicafondo.volume = _musicaSlider.value;
         AudioListener.volume = _musicaSlider.value;
         SaveM();
     }
@@ -152,6 +157,8 @@ public class InicioManager : MonoBehaviour
 
     private void Load()
     {
+        //_musicaSlider.value = Musicafondo.volume;
+        
         if (PlayerPrefs.HasKey("_hasPlayed"))
         {
             HasPlayed = Convert.ToBoolean(PlayerPrefs.GetInt("_hasPlayed"));
@@ -173,8 +180,14 @@ public class InicioManager : MonoBehaviour
 
     private void SaveM()
     {
+        
         PlayerPrefs.SetFloat("MusicVolume", _musicaSlider.value);
     }
 
     #endregion
+
+    private void Update()
+    {
+        Musicafondo.volume = _musicaSlider.value;
+    }
 }

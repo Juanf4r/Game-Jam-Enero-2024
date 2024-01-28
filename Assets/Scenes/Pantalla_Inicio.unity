@@ -180,8 +180,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: be7266a0f2ab51b4f873c2f58aef1b3b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -230,8 +230,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 198567749}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 651335a6e10bafc4995837e26c5cecf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -465,10 +465,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
+  Musicafondo: {fileID: 0}
   leaderBoardButton: {fileID: 0}
+  music: {fileID: 0}
+  sinMusic: {fileID: 0}
   exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
   newGameCanvas: {fileID: 0}
+  _playerInput: {fileID: 0}
   HasPlayed: 0
 --- !u!1 &131233577
 GameObject:
@@ -797,7 +801,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb8ad44dc17020d4a804b7f60f08a002, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 100cc61943e6cbb4791720d465e41754, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1167,8 +1171,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 364a7af85ec4d2842ab88079f94570e5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1429,7 +1433,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 651335a6e10bafc4995837e26c5cecf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1744,10 +1748,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
+  Musicafondo: {fileID: 0}
   leaderBoardButton: {fileID: 0}
+  music: {fileID: 0}
+  sinMusic: {fileID: 0}
   exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
   newGameCanvas: {fileID: 0}
+  _playerInput: {fileID: 0}
   HasPlayed: 0
 --- !u!1 &510235041
 GameObject:
@@ -2009,7 +2017,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a816f889d8525d41a00a9fff2e64470, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16d5ca26941ca87429af423d0a2ce4b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2121,8 +2129,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: be7266a0f2ab51b4f873c2f58aef1b3b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2352,7 +2360,7 @@ RectTransform:
   m_Father: {fileID: 397442956}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2376,8 +2384,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 364a7af85ec4d2842ab88079f94570e5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3226,7 +3234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8e680fc80227aa4d90f2904a6de8674, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b2dc03faf8dbe7447872618da44f54b8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3566,10 +3574,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 2066282665}
   _musicaSlider: {fileID: 947363774}
+  Musicafondo: {fileID: 0}
   leaderBoardButton: {fileID: 0}
+  music: {fileID: 0}
+  sinMusic: {fileID: 0}
   exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
   newGameCanvas: {fileID: 0}
+  _playerInput: {fileID: 0}
   HasPlayed: 0
 --- !u!114 &947363774
 MonoBehaviour:
@@ -3859,8 +3871,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: be7266a0f2ab51b4f873c2f58aef1b3b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4063,7 +4075,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 91514b4f55df10749a3b2cec6eb9ed22, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d05d489498d3dc4f9fa3d3d0fc2142a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4407,7 +4419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a816f889d8525d41a00a9fff2e64470, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 16d5ca26941ca87429af423d0a2ce4b2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4823,7 +4835,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 651335a6e10bafc4995837e26c5cecf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5346,7 +5358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 651335a6e10bafc4995837e26c5cecf9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5478,7 +5490,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 91514b4f55df10749a3b2cec6eb9ed22, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d05d489498d3dc4f9fa3d3d0fc2142a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5772,7 +5784,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb8ad44dc17020d4a804b7f60f08a002, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 100cc61943e6cbb4791720d465e41754, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5928,7 +5940,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8e680fc80227aa4d90f2904a6de8674, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b2dc03faf8dbe7447872618da44f54b8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6347,8 +6359,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 364a7af85ec4d2842ab88079f94570e5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6422,8 +6434,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 364a7af85ec4d2842ab88079f94570e5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6497,8 +6509,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: be7266a0f2ab51b4f873c2f58aef1b3b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6788,10 +6800,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
+  Musicafondo: {fileID: 2033634787}
   leaderBoardButton: {fileID: 1033813718}
+  music: {fileID: 864620558}
+  sinMusic: {fileID: 21300000, guid: c8aecbace5e012e4987f930c9e2378ca, type: 3}
   exitPanel: {fileID: 173860253}
   defaultCanvas: {fileID: 704076610}
   newGameCanvas: {fileID: 1500362527}
+  _playerInput: {fileID: 0}
   HasPlayed: 1
 --- !u!4 &1990686127
 Transform:
@@ -6819,6 +6835,7 @@ GameObject:
   - component: {fileID: 2033634786}
   - component: {fileID: 2033634785}
   - component: {fileID: 2033634784}
+  - component: {fileID: 2033634787}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6900,6 +6917,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &2033634787
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033634783}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 644bfc81a1a01724b9b8ae353505ce16, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2049198240
 GameObject:
   m_ObjectHideFlags: 0
@@ -7031,10 +7144,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 2066282665}
   _musicaSlider: {fileID: 947363774}
+  Musicafondo: {fileID: 0}
   leaderBoardButton: {fileID: 0}
+  music: {fileID: 0}
+  sinMusic: {fileID: 0}
   exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
   newGameCanvas: {fileID: 0}
+  _playerInput: {fileID: 0}
   HasPlayed: 0
 --- !u!224 &2066282667
 RectTransform:
