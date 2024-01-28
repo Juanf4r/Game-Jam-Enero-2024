@@ -8,6 +8,7 @@ public class StatsManager : MonoBehaviour
     public static StatsManager Instance;
     public TMP_InputField username;
     public string playerName;
+    public UIManager uiManager; // Referencia al UIManager
 
     private void Awake()
     {
@@ -22,13 +23,23 @@ public class StatsManager : MonoBehaviour
         }
     }
 
-    public void SaveName(string user)
+    private void Start()
     {
-        string textoInputField = username.text;
+        if (PlayerPrefs.HasKey("playerName"))
+        {
+            playerName = PlayerPrefs.GetString("playerName");
+        }
+        else
+        {
+            PlayerPrefs.SetString("playerName", playerName);
+            playerName = PlayerPrefs.GetString("playerName");
+        }
+    }
 
-        PlayerPrefs.SetString("TextoGuardado", textoInputField);
-        PlayerPrefs.Save();
-        textoInputField = playerName;
-        playerName = user;
+    public void SaveName(string user = null)
+    {
+        string textoInputField = (user != null) ? user : username.text;
+        playerName = textoInputField;
+        PlayerPrefs.SetString("playerName", playerName);
     }
 }
