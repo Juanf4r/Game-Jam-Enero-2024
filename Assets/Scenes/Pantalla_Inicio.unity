@@ -465,8 +465,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
-  exitPanel: {fileID: 0}
   leaderBoardButton: {fileID: 0}
+  exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
   newGameCanvas: {fileID: 0}
   HasPlayed: 0
@@ -1744,8 +1744,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
-  exitPanel: {fileID: 0}
   leaderBoardButton: {fileID: 0}
+  exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
   newGameCanvas: {fileID: 0}
   HasPlayed: 0
@@ -3566,8 +3566,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 2066282665}
   _musicaSlider: {fileID: 947363774}
-  exitPanel: {fileID: 0}
   leaderBoardButton: {fileID: 0}
+  exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
   newGameCanvas: {fileID: 0}
   HasPlayed: 0
@@ -6657,8 +6657,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6cf792962f6f5d46ba12cd18ed95a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  username: {fileID: 1303423964}
   playerName: 
+  username: {fileID: 1303423964}
   uiManager: {fileID: 1093290963}
 --- !u!4 &1955543572
 Transform:
@@ -6788,8 +6788,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
-  exitPanel: {fileID: 173860253}
   leaderBoardButton: {fileID: 1033813718}
+  exitPanel: {fileID: 173860253}
   defaultCanvas: {fileID: 704076610}
   newGameCanvas: {fileID: 1500362527}
   HasPlayed: 1
@@ -7031,8 +7031,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 2066282665}
   _musicaSlider: {fileID: 947363774}
-  exitPanel: {fileID: 0}
   leaderBoardButton: {fileID: 0}
+  exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
   newGameCanvas: {fileID: 0}
   HasPlayed: 0

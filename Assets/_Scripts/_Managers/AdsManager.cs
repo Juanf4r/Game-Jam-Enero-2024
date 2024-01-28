@@ -6,6 +6,10 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class AdsManager : MonoBehaviour
 {
+    public static AdsManager Instance;
+
+    [SerializeField] private AudioSource laughClown;
+
     [SerializeField] private RectTransform mainCanvas;
     [SerializeField] private GameObject panelWin;
     [SerializeField] private GameObject panelLose;
@@ -14,32 +18,41 @@ public class AdsManager : MonoBehaviour
     [SerializeField] private float limitTime;
     private Vector2 _canvasSize;
     private ObjectPool _objectPool;
-
-    public float _restantTime;
     private int _iterator;
     private bool _winGame;
     private bool _timeTrial;
 
+    public float restantTime;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     private void Start()
     {
         _objectPool = ObjectPool.Instance;
         _timeTrial = false;
         _winGame = false;
-        _restantTime = limitTime;
-        
-        StartGame();  
+        restantTime = limitTime; 
     }
 
     private void Update()
     {
         if (_timeTrial == false)
         {
-            _restantTime -= Time.deltaTime;
+            restantTime -= Time.deltaTime;
 
-            if (_restantTime <= 0.0f)
+            if (restantTime <= 0.0f)
             {
-                _restantTime = 0.0f;
+                restantTime = 0.0f;
                 _timeTrial = true;
 
                 StartCoroutine(StopGame()); 
@@ -47,7 +60,7 @@ public class AdsManager : MonoBehaviour
         }
     }
 
-    private void StartGame()
+    public void StartGame()
     {
         StartCoroutine(ChargeAds());
 
@@ -58,12 +71,12 @@ public class AdsManager : MonoBehaviour
     {
         while(true)
         {
-            Invoke(nameof(LoadAd), .15f);
+            Invoke(nameof(LoadAd), .25f);
             _iterator++;
 
-            yield return new WaitForSeconds(.25f);
+            yield return new WaitForSeconds(.35f);
 
-            if(_iterator >= 15)
+            if(_iterator >= 18)
             {
                 break;
             }
@@ -79,11 +92,13 @@ public class AdsManager : MonoBehaviour
         {
             panelWin.SetActive(true);
             yield return new WaitForSeconds(6f);
+            
 
             SceneManager.LoadScene(2);
         }
         else if(_winGame == false)
         {
+            laughClown.Play();
             panelLose.SetActive(true);
             yield return new WaitForSeconds(6f);
 

@@ -8,11 +8,16 @@ public class InicioManager : MonoBehaviour
 {
     public static InicioManager Instance;
 
+
+    [Header("Sliders")]
     [SerializeField] private Slider _sonidoSlider;
     [SerializeField] private Slider _musicaSlider;
-    [SerializeField] private GameObject exitPanel;
+
+    [Header("Buttons")]
     [SerializeField] private Button leaderBoardButton;
 
+    [Header("GameObjects")]
+    [SerializeField] private GameObject exitPanel;
     [SerializeField] private GameObject defaultCanvas;
     [SerializeField] private GameObject newGameCanvas;
 
@@ -20,7 +25,7 @@ public class InicioManager : MonoBehaviour
     private ControllerActions _controllerActions;
     private bool _stopGame;
 
-    public bool HasPlayed;
+    [HideInInspector] public bool HasPlayed;
 
     private void Awake()
     {

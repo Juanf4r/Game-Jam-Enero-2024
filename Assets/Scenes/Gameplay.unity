@@ -1666,13 +1666,14 @@ MonoBehaviour:
   exitPanel: {fileID: 470739716}
   gameLost: {fileID: 1043548075}
   gameWin: {fileID: 1082065970}
-  background: {fileID: 0}
+  background: {fileID: 981024714}
+  backgroundSprite: {fileID: 0}
   backgroundImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  _counterGames: 0
+  - {fileID: 21300000, guid: 0e7838234acdc7b4d97ff0464ae2a1f0, type: 3}
+  - {fileID: 21300000, guid: 946528fc2826be84eaf2488a0b016869, type: 3}
+  - {fileID: 21300000, guid: 5e724b5e336eea84b893a0221fe76ca9, type: 3}
+  - {fileID: 21300000, guid: a76b89a28c3b3f04391d12b8631bd23c, type: 3}
+  counterGames: 0
 --- !u!4 &1153284126
 Transform:
   m_ObjectHideFlags: 0
@@ -4071,6 +4072,14 @@ PrefabInstance:
     - target: {fileID: 2094755410577037635, guid: bfb771c2556c28848aa464a32e66eb42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612313420331933990, guid: bfb771c2556c28848aa464a32e66eb42, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5612313420331933990, guid: bfb771c2556c28848aa464a32e66eb42, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5769497827004132887, guid: bfb771c2556c28848aa464a32e66eb42, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

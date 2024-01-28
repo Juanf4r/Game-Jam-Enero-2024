@@ -10,22 +10,26 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [Header("GameObjects")]
     [SerializeField] private GameObject mainCanvas;
     [SerializeField] private GameObject exitPanel;
     [SerializeField] private GameObject gameLost;
     [SerializeField] private GameObject gameWin;
 
+    [Header("Background")]
     [SerializeField] private Image background;
+    [SerializeField] private SpriteRenderer backgroundSprite;
     [SerializeField] private Sprite[] backgroundImages = new Sprite[4];
 
-    private string _playerUser;
-    private float _timeLeft;
     private InicioManager _inicioManager;
     private PlayerInput _playerInput;
     private ControllerActions _controllerActions;
-    public int _counterGames;
+    private string _playerUser;
+    private float _timeLeft;
     private bool _stopGame;
     private bool _randomBool = false;
+
+    public int counterGames;
 
     private void Awake()
     {
@@ -39,6 +43,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
+        backgroundSprite = GetComponent<SpriteRenderer>();
+
         _inicioManager = InicioManager.Instance;
         //Input System
         _playerInput = GetComponent<PlayerInput>();
@@ -46,7 +52,7 @@ public class GameManager : MonoBehaviour
         _controllerActions.GameController.Enable();
         _controllerActions.GameController.ExitGame.performed += EscapeButton;
 
-        _counterGames = 0;
+        counterGames = 0;
         _stopGame = false;
         _randomBool = UnityEngine.Random.Range(0, 2) == 0;
 
@@ -134,16 +140,19 @@ public class GameManager : MonoBehaviour
 
     public void Background1()
     {
+        backgroundSprite.sprite = backgroundImages[1];
         background.sprite = backgroundImages[1];
     }
 
     public void Background2()
     {
+        backgroundSprite.sprite = backgroundImages[2];
         background.sprite = backgroundImages[2];
     }
 
     public void Background3()
     {
+        backgroundSprite.sprite = backgroundImages[3];
         background.sprite = backgroundImages[3];
     }
 
@@ -164,7 +173,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator Lose()
     {
         gameLost.SetActive(true);
-        _counterGames = 0;
+        counterGames = 0;
         Prueba.Instancia.contador = 0;
         StatsManager.Instance.playerName = "";
         //Suena musica de Perder
@@ -177,7 +186,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator Won()
     {
         gameWin.SetActive(true);
-        _counterGames = 0;
+        counterGames = 0;
         Prueba.Instancia.contador = 0;
 
         _timeLeft = TimeManager.Instance.restantTime;
@@ -202,11 +211,11 @@ public class GameManager : MonoBehaviour
 
     public void StartMiniGame()
     {
-        _counterGames += 1;
+        counterGames += 1;
         SaveData();
         Prueba.Instancia.SaveData();
 
-        switch (_counterGames)
+        switch (counterGames)
         {
             case 1:
 
@@ -300,18 +309,18 @@ public class GameManager : MonoBehaviour
 
         if (PlayerPrefs.HasKey("counterGames"))
         {
-            _counterGames = PlayerPrefs.GetInt("counterGames");
+            counterGames = PlayerPrefs.GetInt("counterGames");
         }
         else
         {
             PlayerPrefs.SetInt("counterGames", 0);
-            _counterGames = PlayerPrefs.GetInt("counterGames");
+            counterGames = PlayerPrefs.GetInt("counterGames");
         }
     }
 
     private void SaveData()
     {
-        PlayerPrefs.SetInt("counterGames", _counterGames);
+        PlayerPrefs.SetInt("counterGames", counterGames);
         PlayerPrefs.SetInt("_hasPlayed", Convert.ToInt32(_inicioManager.HasPlayed));
     }
 
