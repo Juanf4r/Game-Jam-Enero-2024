@@ -16,7 +16,6 @@ public class LeaderBoardManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] nameStats = new TextMeshProUGUI[5];
     [SerializeField] private TextMeshProUGUI[] timeStats = new TextMeshProUGUI[5];
 
-
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -39,7 +38,7 @@ public class LeaderBoardManager : MonoBehaviour
 
     public void ExitScene()
     {
-        SceneManager.LoadScene("Pantalla_Inicio");
+        SceneManager.LoadScene(0);
     }
 
     #endregion
