@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject exitPanel;
     [SerializeField] private GameObject gameLost;
     [SerializeField] private GameObject gameWin;
+
+    [SerializeField] private Image background;
+    [SerializeField] private Sprite[] backgroundImages = new Sprite[4];
 
     private string _playerUser;
     private float _timeLeft;
@@ -126,6 +130,25 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region Backgrounds
+
+    public void Background1()
+    {
+        background.sprite = backgroundImages[1];
+    }
+
+    public void Background2()
+    {
+        background.sprite = backgroundImages[2];
+    }
+
+    public void Background3()
+    {
+        background.sprite = backgroundImages[3];
+    }
+
+    #endregion
+
     #region Win or Lose
 
     public void WinGame()
@@ -142,6 +165,8 @@ public class GameManager : MonoBehaviour
     {
         gameLost.SetActive(true);
         _counterGames = 0;
+        Prueba.Instancia.contador = 0;
+        StatsManager.Instance.playerName = "";
         //Suena musica de Perder
 
         yield return new WaitForSeconds(5f);
@@ -158,7 +183,11 @@ public class GameManager : MonoBehaviour
         _timeLeft = TimeManager.Instance.restantTime;
         _playerUser = StatsManager.Instance.playerName;
 
+        LeaderBoardManager.Instance.SaveData(_timeLeft, _playerUser);
+
         InicioManager.Instance.HasPlayed = true;
+        StatsManager.Instance.playerName = "";
+
         SaveData();
 
         //Suena musica de Ganar

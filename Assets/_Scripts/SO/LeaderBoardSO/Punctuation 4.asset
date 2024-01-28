@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a531118dc607a148bad6622402d4b9c, type: 3}
   m_Name: Punctuation 4
   m_EditorClassIdentifier: 
-  playerName: Madera
+  playerName: 
   time: 0
