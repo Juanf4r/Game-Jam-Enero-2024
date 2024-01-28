@@ -153,6 +153,7 @@ public class GameManager : MonoBehaviour
     {
         gameWin.SetActive(true);
         _counterGames = 0;
+        Prueba.Instancia.contador = 0;
 
         _timeLeft = TimeManager.Instance.restantTime;
         _playerUser = StatsManager.Instance.playerName;
@@ -173,7 +174,8 @@ public class GameManager : MonoBehaviour
     public void StartMiniGame()
     {
         _counterGames += 1;
-        SaveData(); 
+        SaveData();
+        Prueba.Instancia.SaveData();
 
         switch (_counterGames)
         {

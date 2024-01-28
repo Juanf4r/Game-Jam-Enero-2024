@@ -1048,6 +1048,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1955543571}
+        m_TargetAssemblyTypeName: StatsManager, Assembly-CSharp
+        m_MethodName: SaveName
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1990686126}
         m_TargetAssemblyTypeName: InicioManager, Assembly-CSharp
         m_MethodName: LoadScene
@@ -5709,7 +5721,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 156, y: 0}
+  m_AnchoredPosition: {x: 125.2, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1303423964
@@ -7232,6 +7244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6cf792962f6f5d46ba12cd18ed95a18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  username: {fileID: 1303423964}
   playerName: 
 --- !u!4 &1955543572
 Transform:

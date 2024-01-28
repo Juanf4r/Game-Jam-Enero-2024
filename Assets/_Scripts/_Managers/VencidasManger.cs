@@ -18,7 +18,7 @@ public class VencidasManager : MonoBehaviour
     void Start()
     {
         clickButton.onClick.AddListener(OnClickButton);
-        currentScore = 75f;
+        currentScore = 100f;
         ResetGame();
     }
 
@@ -36,7 +36,7 @@ public class VencidasManager : MonoBehaviour
                 _update = false;
                 PanelPerdedor.SetActive(true);
                 TimeManager.Instance.LoseTime(30f);
-                StartCoroutine(Cambio(6f, 2));
+                StartCoroutine(Cambio(4f, 2));
             }
         }
         
@@ -50,7 +50,7 @@ public class VencidasManager : MonoBehaviour
         {
             Debug.Log("¡Ganaste!");
             PanelGanador.SetActive(true);
-            StartCoroutine(Cambio(5f, 2));
+            StartCoroutine(Cambio(4f, 2));
             TimeManager.Instance.WinTime(45f);
         }
     }
