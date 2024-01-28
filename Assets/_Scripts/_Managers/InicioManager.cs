@@ -8,7 +8,6 @@ public class InicioManager : MonoBehaviour
 {
     public static InicioManager Instance;
 
-
     [Header("Sliders")]
     [SerializeField] public Slider _sonidoSlider;
     [SerializeField] public Slider _musicaSlider;

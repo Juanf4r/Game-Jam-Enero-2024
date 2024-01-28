@@ -74,7 +74,7 @@ public class AdivinaManager : MonoBehaviour
             feedbackText.text = "Congratulations! You've guessed the password, you're smarter than you look";
             StartCoroutine(ganar(5f));
             StartCoroutine(DesactivarPanelDespuesDeEspera(10f, 2));
-            TimeManager.Instance.WinTime(20f);
+            TimeManager.Instance.WinTime(15f);
         }
         else
         {
@@ -89,7 +89,7 @@ public class AdivinaManager : MonoBehaviour
             {
                 feedbackText.text = "Hahahaha, the password was " + _contraseñaActual;
                 StartCoroutine(Perder(4f));
-                TimeManager.Instance.WinTime(-25f);
+                TimeManager.Instance.LoseTime(25f);
                 StartCoroutine(DesactivarPanelDespuesDeEspera(6f, 2));
             }
         }

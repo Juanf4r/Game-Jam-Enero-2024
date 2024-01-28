@@ -102,7 +102,7 @@ public class AdsManager : MonoBehaviour
             laughClown.Play();
             panelLose.SetActive(true);
             yield return new WaitForSeconds(6f);
-            TimeManager.Instance.WinTime(-15f);
+            TimeManager.Instance.LoseTime(25f);
 
             SceneManager.LoadScene(2);
         }   

@@ -39,7 +39,7 @@ public class PersecusionManager : MonoBehaviour
                 _tiempoRestante = 0.0f;
                 _timeTrial = true;
                 panelPerdedor.SetActive(true);
-                TimeManager.Instance.WinTime(-15f);
+                TimeManager.Instance.LoseTime(35f);
             }
         }
     }
