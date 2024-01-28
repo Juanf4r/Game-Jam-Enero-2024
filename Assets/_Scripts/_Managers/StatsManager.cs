@@ -1,11 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StatsManager : MonoBehaviour
 {
     public static StatsManager Instance;
-
+    public TMP_InputField username;
     public string playerName;
 
     private void Awake()
@@ -23,6 +24,11 @@ public class StatsManager : MonoBehaviour
 
     public void SaveName(string user)
     {
-       playerName = user;
+        string textoInputField = username.text;
+
+        PlayerPrefs.SetString("TextoGuardado", textoInputField);
+        PlayerPrefs.Save();
+        textoInputField = playerName;
+        playerName = user;
     }
 }
