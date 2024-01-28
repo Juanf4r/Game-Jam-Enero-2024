@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class VencidasManager : MonoBehaviour
 {
-    public Button clickButton;
-    public Slider scoreSlider;
-    public GameObject PanelGanador;
-    public GameObject PanelPerdedor;
+    [SerializeField] private Button clickButton;
+    [SerializeField] private Slider scoreSlider;
+    [SerializeField] private GameObject PanelGanador;
+    [SerializeField] private GameObject PanelPerdedor;
     private float _maxScore = 150f;
     private float _scoreDecreaseRate = 25f;
     private float _clickValue = 6f;
-
     private float currentScore;
+    private bool _update = true;
 
     void Start()
     {
@@ -24,20 +24,25 @@ public class VencidasManager : MonoBehaviour
 
     void Update()
     {
-        currentScore -= _scoreDecreaseRate * Time.deltaTime;
-        currentScore = Mathf.Clamp(currentScore, 0f, _maxScore);
-        scoreSlider.value = currentScore;
 
-        if (currentScore <= 0.01f) 
+        if(_update == true)
         {
-            Debug.Log("Perdiste");
-            PanelPerdedor.SetActive(true);
-            TimeManager.Instance.LoseTime(30f);
-            StartCoroutine(Cambio(6f, 2));
+            currentScore -= _scoreDecreaseRate * Time.deltaTime;
+            currentScore = Mathf.Clamp(currentScore, 0f, _maxScore);
+            scoreSlider.value = currentScore;
+
+            if (currentScore <= 0.01f)
+            {
+                _update = false;
+                PanelPerdedor.SetActive(true);
+                TimeManager.Instance.LoseTime(30f);
+                StartCoroutine(Cambio(6f, 2));
+            }
         }
+        
     }
 
-    void OnClickButton()
+    public void OnClickButton()
     {
         currentScore += _clickValue;
         currentScore = Mathf.Clamp(currentScore, 0f, _maxScore);
