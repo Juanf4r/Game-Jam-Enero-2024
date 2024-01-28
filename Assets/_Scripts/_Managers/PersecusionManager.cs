@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PersecusionManager : MonoBehaviour
 {
-    private float _velocidadEnemigo = 5f;
+    private float _velocidadEnemigo = 7f;
     private Vector2 posicionInicialEnemigo;
     [SerializeField] GameObject panelFelicidades;
     [SerializeField] GameObject panelPerdedor; 

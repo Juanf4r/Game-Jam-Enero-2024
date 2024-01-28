@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject exitPanel;
     [SerializeField] private GameObject gameLost;
     [SerializeField] private GameObject gameWin;
+    [SerializeField] private GameObject antiVirus;
+    [SerializeField] private GameObject antiVirus2;
 
     [Header("Background")]
     [SerializeField] private Image background;
@@ -62,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        antiVirus2.SetActive(false);
         LoadData();
     }
 
@@ -188,6 +191,8 @@ public class GameManager : MonoBehaviour
         gameWin.SetActive(true);
         counterGames = 0;
         Prueba.Instancia.contador = 0;
+        antiVirus2.SetActive(true);
+
 
         _timeLeft = TimeManager.Instance.restantTime;
         _playerUser = StatsManager.Instance.playerName;
