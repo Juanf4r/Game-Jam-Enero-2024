@@ -92,7 +92,8 @@ public class AdsManager : MonoBehaviour
         {
             panelWin.SetActive(true);
             yield return new WaitForSeconds(6f);
-            
+            TimeManager.Instance.WinTime(15f);
+
 
             SceneManager.LoadScene(2);
         }
@@ -101,6 +102,7 @@ public class AdsManager : MonoBehaviour
             laughClown.Play();
             panelLose.SetActive(true);
             yield return new WaitForSeconds(6f);
+            TimeManager.Instance.WinTime(-15f);
 
             SceneManager.LoadScene(2);
         }   

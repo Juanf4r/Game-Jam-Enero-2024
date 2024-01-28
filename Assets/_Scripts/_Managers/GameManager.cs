@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,8 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+
+    [SerializeField] private LeaderBoardStats[] stats = new LeaderBoardStats[6];
 
     [Header("GameObjects")]
     [SerializeField] private GameObject mainCanvas;
@@ -20,8 +23,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Background")]
     [SerializeField] private Image background;
-    [SerializeField] private SpriteRenderer backgroundSprite;
-    [SerializeField] private Sprite[] backgroundImages = new Sprite[4];
+    [SerializeField] private Sprite[] backgroundImages = new Sprite[7];
 
     private InicioManager _inicioManager;
     private PlayerInput _playerInput;
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
     private float _timeLeft;
     private bool _stopGame;
     private bool _randomBool = false;
+    private bool _gameCatch = false;
 
     public int counterGames;
 
@@ -45,9 +48,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
         }
 
-        backgroundSprite = GetComponent<SpriteRenderer>();
-
         _inicioManager = InicioManager.Instance;
+
         //Input System
         _playerInput = GetComponent<PlayerInput>();
         _controllerActions = new ControllerActions();
@@ -64,8 +66,16 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        antiVirus2.SetActive(false);
         LoadData();
+
+        if(_gameCatch == false)
+        {
+            background.sprite = backgroundImages[counterGames];
+        }
+        else if(_gameCatch == true)
+        {
+            //No cambia
+        }
     }
 
     #region Input System
@@ -139,28 +149,6 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    #region Backgrounds
-
-    public void Background1()
-    {
-        backgroundSprite.sprite = backgroundImages[1];
-        background.sprite = backgroundImages[1];
-    }
-
-    public void Background2()
-    {
-        backgroundSprite.sprite = backgroundImages[2];
-        background.sprite = backgroundImages[2];
-    }
-
-    public void Background3()
-    {
-        backgroundSprite.sprite = backgroundImages[3];
-        background.sprite = backgroundImages[3];
-    }
-
-    #endregion
-
     #region Win or Lose
 
     public void WinGame()
@@ -191,13 +179,12 @@ public class GameManager : MonoBehaviour
         gameWin.SetActive(true);
         counterGames = 0;
         Prueba.Instancia.contador = 0;
-        antiVirus2.SetActive(true);
-
 
         _timeLeft = TimeManager.Instance.restantTime;
         _playerUser = StatsManager.Instance.playerName;
+        TimeManager.Instance.TimeTrial = true;
 
-        LeaderBoardManager.Instance.SaveData(_timeLeft, _playerUser);
+        SaveData(_timeLeft, _playerUser);   
 
         InicioManager.Instance.HasPlayed = true;
         StatsManager.Instance.playerName = "";
@@ -230,6 +217,7 @@ public class GameManager : MonoBehaviour
 
             case 2:
 
+                _gameCatch = true;
                 FollowTheIcon();
 
                 break;
@@ -261,18 +249,19 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
+                    _gameCatch = true;
                     FollowTheIcon();
                 }
 
                 break;
 
-            case 7:
+            case 6:
 
                 GuessThePassword();
 
                 break;
 
-            case 8:
+            case 7:
 
                 WinGame();
 
@@ -280,7 +269,7 @@ public class GameManager : MonoBehaviour
 
             default:
 
-                Debug.Log("Error, no tiene el valor correcto");
+                Debug.Log("Error en la matrix");
                 break;
         }
     }
@@ -308,6 +297,30 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Save Data
+
+    public void SaveData(float timeLeft, string userName)
+    {
+        for (int i = 0; i < stats.Length; i++)
+        {
+            if (stats[i].time >= timeLeft)
+            {
+                //En caso de que haya un valor menor que el que se consiguio, este se recorre abajo
+                stats[i + 1].time = stats[i].time;
+                stats[i + 1].playerName = stats[i].playerName;
+
+                //Se reemplaza el valor viejo con el nuevo
+                stats[i].time = timeLeft;
+                stats[i].playerName = userName;
+
+                stats[5].time = 0;
+                stats[5].playerName = "";
+            }
+            else if (stats[i].time <= timeLeft)
+            {
+                //Tu progreso fue muy bajo, sigue jugando
+            }
+        }
+    }
 
     private void LoadData()
     {
