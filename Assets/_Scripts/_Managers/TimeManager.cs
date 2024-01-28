@@ -40,6 +40,20 @@ public class TimeManager : MonoBehaviour
         {
             restantTime -= Time.deltaTime;
 
+            if(restantTime <= 235f && restantTime >= 140f)
+            {
+                Debug.Log("Entre");
+                GameManager.Instance.Background1();
+            }
+            else if (restantTime <= 140f && restantTime >= 80f)
+            {
+                GameManager.Instance.Background2();
+            }
+            else if(restantTime <= 80f && restantTime >= 35f)
+            {
+                GameManager.Instance.Background3();
+            }
+            
             if (restantTime <= 0.0f)
             {
                 restantTime = 0.0f;
