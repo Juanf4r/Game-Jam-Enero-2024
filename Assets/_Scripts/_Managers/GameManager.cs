@@ -155,7 +155,8 @@ public class GameManager : MonoBehaviour
 
     public void WinGame()
     {
-        StartCoroutine(Won());
+        WIN();
+        //StartCoroutine(Won());
     }
 
     public void LoseGame()
@@ -176,7 +177,6 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Won()
     {
-        gameWin.SetActive(true);
         counterGames = 0;
         Prueba.Instancia.contador = 0;
 
@@ -195,6 +195,11 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         SceneManager.LoadScene(0);
+    }
+
+    public void WIN()
+    {
+        gameWin.SetActive(true);
     }
 
     #endregion
