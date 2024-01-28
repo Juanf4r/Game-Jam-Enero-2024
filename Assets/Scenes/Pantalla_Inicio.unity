@@ -465,7 +465,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
-  Musicafondo: {fileID: 0}
   leaderBoardButton: {fileID: 0}
   exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
@@ -1746,7 +1745,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
-  Musicafondo: {fileID: 0}
   leaderBoardButton: {fileID: 0}
   exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
@@ -3056,6 +3054,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714372035}
   m_CullTransparentMesh: 1
+--- !u!1 &725658457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 725658459}
+  - component: {fileID: 725658458}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &725658458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725658457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363e971a141d03f4bb864fcf53563f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicVolume: 0
+  _musica: {fileID: 2033634787}
+--- !u!4 &725658459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725658457}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1112.1189, y: 545.2946, z: 18.831617}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &837771394
 GameObject:
   m_ObjectHideFlags: 0
@@ -3570,7 +3614,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 2066282665}
   _musicaSlider: {fileID: 947363774}
-  Musicafondo: {fileID: 0}
   leaderBoardButton: {fileID: 0}
   exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
@@ -6666,8 +6709,6 @@ MonoBehaviour:
   playerName: 
   username: {fileID: 1303423964}
   uiManager: {fileID: 1093290963}
-  musicVolume: 0
-  _musica: {fileID: 2033634787}
 --- !u!4 &1955543572
 Transform:
   m_ObjectHideFlags: 0
@@ -6796,7 +6837,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 477284683}
   _musicaSlider: {fileID: 123342007}
-  Musicafondo: {fileID: 2033634787}
   leaderBoardButton: {fileID: 1033813718}
   exitPanel: {fileID: 173860253}
   defaultCanvas: {fileID: 704076610}
@@ -7138,7 +7178,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sonidoSlider: {fileID: 2066282665}
   _musicaSlider: {fileID: 947363774}
-  Musicafondo: {fileID: 0}
   leaderBoardButton: {fileID: 0}
   exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
@@ -7256,3 +7295,4 @@ SceneRoots:
   - {fileID: 1990686127}
   - {fileID: 1955543572}
   - {fileID: 1093290964}
+  - {fileID: 725658459}
