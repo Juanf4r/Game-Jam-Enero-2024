@@ -12,6 +12,9 @@ public class AdivinaManager : MonoBehaviour
     private string _contraseñaActual;
     private int _maximoIntentos = 6;
     [SerializeField] GameObject panelJuego;
+    [SerializeField] GameObject PanelPerdedor;
+    [SerializeField] GameObject PanelGanador;
+    
 
     private void Start()
     {
@@ -49,7 +52,8 @@ public class AdivinaManager : MonoBehaviour
             if (_maximoIntentos <= 0)
             {
                 feedbackText.text = "Hahahaha, the password was " + _contraseñaActual;
-                StartCoroutine(DesactivarPanelDespuesDeEspera(5f, 2));
+                StartCoroutine(Perder(5f));
+                StartCoroutine(DesactivarPanelDespuesDeEspera(10f, 2));
                 TimeManager.Instance.LoseTime(30f);
             }
             return;
@@ -68,7 +72,8 @@ public class AdivinaManager : MonoBehaviour
         if (letrasCorrectas == _contraseñaActual.Length)
         {
             feedbackText.text = "Congratulations! You've guessed the password, you're smarter than you look";
-            StartCoroutine(DesactivarPanelDespuesDeEspera(5f, 2));
+            StartCoroutine(ganar(5f));
+            StartCoroutine(DesactivarPanelDespuesDeEspera(10f, 2));
             TimeManager.Instance.WinTime(45f);
         }
         else
@@ -83,7 +88,8 @@ public class AdivinaManager : MonoBehaviour
             if (_maximoIntentos <= 0)
             {
                 feedbackText.text = "Hahahaha, the password was " + _contraseñaActual;
-                StartCoroutine(DesactivarPanelDespuesDeEspera(5f, 2));
+                StartCoroutine(Perder(5f));
+                StartCoroutine(DesactivarPanelDespuesDeEspera(10f, 2));
             }
         }
     }
@@ -92,5 +98,19 @@ public class AdivinaManager : MonoBehaviour
     {
         yield return new WaitForSeconds(tiempoEspera);
         SceneManager.LoadScene(Escena);
+    }
+
+    IEnumerator Perder(float tiempoEspera)
+    {
+        yield return new WaitForSeconds(tiempoEspera);
+        PanelPerdedor.SetActive(true);
+        panelJuego.SetActive(false);
+    }
+
+    IEnumerator ganar(float tiempoEspera)
+    {
+        yield return new WaitForSeconds(tiempoEspera);
+        PanelGanador.SetActive(true);
+        panelJuego.SetActive(false);
     }
 }
