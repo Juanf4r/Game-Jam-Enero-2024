@@ -8,19 +8,16 @@ public class PersecusionManager : MonoBehaviour
     private Vector2 posicionInicialEnemigo;
     [SerializeField] GameObject panelFelicidades;
     [SerializeField] GameObject panelPerdedor; 
-    //[SerializeField] GameObject PanelDialogo;
 
     private float _tiempoRestante;
     [SerializeField] private float _tiempoLimite;
     private bool _timeTrial;
 
-
-    void Start()
+    private void Start()
     {
         posicionInicialEnemigo = transform.position;
         MoverEnemigoAleatorio();
         _tiempoRestante = _tiempoLimite;
-        //PanelDialogo.SetActive(true);
         StartCoroutine(Dialogo(2f));
         ResetGame();
     }

@@ -9,8 +9,10 @@ public class SistemaDialogoAds : MonoBehaviour
     [SerializeField] private GameObject PanelDialogo;
     [SerializeField] private GameObject PanelMiniJuego;
     [SerializeField] private string[] lines;
+    [SerializeField] private AudioSource clickSound;
     private float _textSpeed = 0.1f;
     private int _index = 0;
+    private bool _stop = false;
 
     private void Start()
     {
@@ -25,6 +27,7 @@ public class SistemaDialogoAds : MonoBehaviour
         {
             if (dialogueText.text == lines[_index])
             {
+
                 NextLine();
             }
 
@@ -64,7 +67,12 @@ public class SistemaDialogoAds : MonoBehaviour
         {
             PanelDialogo.SetActive(false);
             PanelMiniJuego.SetActive(true);
-            AdsManager.Instance.StartGame();
+
+            if(_stop == false)
+            {
+                AdsManager.Instance.StartGame();
+                _stop = true;
+            } 
         }
     }
 }

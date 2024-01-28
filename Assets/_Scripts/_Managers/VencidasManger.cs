@@ -49,7 +49,6 @@ public class VencidasManager : MonoBehaviour
         currentScore = Mathf.Clamp(currentScore, 0f, _maxScore);
         if (currentScore >= _maxScore)
         {
-            Debug.Log("¡Ganaste!");
             PanelGanador.SetActive(true);
             PanelPelea.SetActive(false);
             StartCoroutine(Cambio(4f, 2));

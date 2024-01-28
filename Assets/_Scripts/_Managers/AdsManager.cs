@@ -8,6 +8,8 @@ public class AdsManager : MonoBehaviour
 {
     public static AdsManager Instance;
 
+    [SerializeField] private AudioSource laughClown;
+
     [SerializeField] private RectTransform mainCanvas;
     [SerializeField] private GameObject panelWin;
     [SerializeField] private GameObject panelLose;
@@ -69,12 +71,12 @@ public class AdsManager : MonoBehaviour
     {
         while(true)
         {
-            Invoke(nameof(LoadAd), .15f);
+            Invoke(nameof(LoadAd), .25f);
             _iterator++;
 
-            yield return new WaitForSeconds(.25f);
+            yield return new WaitForSeconds(.35f);
 
-            if(_iterator >= 15)
+            if(_iterator >= 18)
             {
                 break;
             }
@@ -90,11 +92,13 @@ public class AdsManager : MonoBehaviour
         {
             panelWin.SetActive(true);
             yield return new WaitForSeconds(6f);
+            
 
             SceneManager.LoadScene(2);
         }
         else if(_winGame == false)
         {
+            laughClown.Play();
             panelLose.SetActive(true);
             yield return new WaitForSeconds(6f);
 

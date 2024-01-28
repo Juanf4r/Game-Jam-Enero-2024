@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Background")]
     [SerializeField] private Image background;
+    [SerializeField] private SpriteRenderer backgroundSprite;
     [SerializeField] private Sprite[] backgroundImages = new Sprite[4];
 
     private InicioManager _inicioManager;
@@ -41,6 +42,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+
+        backgroundSprite = GetComponent<SpriteRenderer>();
 
         _inicioManager = InicioManager.Instance;
         //Input System
@@ -137,16 +140,19 @@ public class GameManager : MonoBehaviour
 
     public void Background1()
     {
+        backgroundSprite.sprite = backgroundImages[1];
         background.sprite = backgroundImages[1];
     }
 
     public void Background2()
     {
+        backgroundSprite.sprite = backgroundImages[2];
         background.sprite = backgroundImages[2];
     }
 
     public void Background3()
     {
+        backgroundSprite.sprite = backgroundImages[3];
         background.sprite = backgroundImages[3];
     }
 
