@@ -2554,7 +2554,7 @@ GameObject:
   - component: {fileID: 1189965174}
   - component: {fileID: 1189965173}
   m_Layer: 5
-  m_Name: VirusIcon
+  m_Name: AntivirusIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4044,7 +4044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   limitTime: 360
-  _restantTime: 0
+  restantTime: 0
 --- !u!4 &1687234121
 Transform:
   m_ObjectHideFlags: 0
@@ -4117,7 +4117,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'VIRUS
+  m_text: 'ANTIVIRUS
 
     ICON
 

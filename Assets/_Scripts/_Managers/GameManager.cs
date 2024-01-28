@@ -185,27 +185,13 @@ public class GameManager : MonoBehaviour
 
             case 2:
 
-                if (_randomBool == true)
-                {
-                    GuessThePassword();
-                }
-                else
-                {
-                    FollowTheIcon();
-                }
+                FollowTheIcon();
 
                 break;
 
             case 3:
 
-                if (_randomBool == true)
-                {
-                    ClickTheButton();
-                }
-                else
-                {
-                    StopTheAds();
-                }
+                 ClickTheButton();
 
                 break;
 
@@ -217,7 +203,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    FollowTheIcon();
+                    StopTheAds();
                 }
 
                 break;
@@ -230,21 +216,14 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    StopTheAds();
+                    FollowTheIcon();
                 }
 
                 break;
 
             case 7:
 
-                if (_randomBool == true)
-                {
-                    GuessThePassword();
-                }
-                else
-                {
-                    FollowTheIcon();
-                }
+                GuessThePassword();
 
                 break;
 
