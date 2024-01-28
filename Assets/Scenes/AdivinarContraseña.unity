@@ -180,7 +180,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Time is deducted for the virus to take over your computer.
+  m_text: 'Come on, I gave you plenty of tries. Seriously, you
+
+    couldn''t figure
+    it out?
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e3f5eaa56bdfb044a0197431c98938e, type: 2}
   m_sharedMaterial: {fileID: 7205193003254480754, guid: 4e3f5eaa56bdfb044a0197431c98938e, type: 2}
@@ -509,11 +514,8 @@ MonoBehaviour:
   PanelDialogo: {fileID: 482833889}
   PanelMiniJuego: {fileID: 140971823}
   lines:
-  - The game involves the virus blocking access to your computer.
-  - The only way to regain access is by guessing the password through clues left
-  - by the virus to not make it too difficult for you.
-  - 'You have a maximum of 6 attempts, and each attempt may or may not reveal a clue. '
-  - 'If you fail to guess the password, you lose. '
+  - 'Hehe, am I very naughty, right? Do you think you can Guess the super mega secret
+    password? '
   textSpeed: 0.1
 --- !u!1 &519420028
 GameObject:
@@ -3200,7 +3202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Time is added to prevent the virus from taking over your computer.
+  m_text: Okay, it was too easy.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e3f5eaa56bdfb044a0197431c98938e, type: 2}
   m_sharedMaterial: {fileID: 7205193003254480754, guid: 4e3f5eaa56bdfb044a0197431c98938e, type: 2}

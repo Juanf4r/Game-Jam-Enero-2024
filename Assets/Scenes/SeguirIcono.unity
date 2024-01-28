@@ -1177,9 +1177,7 @@ MonoBehaviour:
   PanelDialogo: {fileID: 552469747}
   Enemy: {fileID: 327180901}
   lines:
-  - 'The game involves the virus challenging you to catch it, like a playful child '
-  - 'It dares you to catch it with the mouse while the virus icon escapes from the
-    cursor. '
+  - Shall we play another game, huh?
   - 'If you touch it, you catch it; otherwise, you lose. '
   textSpeed: 0.1
 --- !u!1 &556426029
@@ -2466,7 +2464,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Time is deducted for the virus to take over your computer.
+  m_text: Not even good at moving the mouse, how sad.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e3f5eaa56bdfb044a0197431c98938e, type: 2}
   m_sharedMaterial: {fileID: 7205193003254480754, guid: 4e3f5eaa56bdfb044a0197431c98938e, type: 2}
@@ -3281,7 +3279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Time is added to prevent the virus from taking over your computer.\r"
+  m_text: Very well, you managed to do the bare minimum!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4e3f5eaa56bdfb044a0197431c98938e, type: 2}
   m_sharedMaterial: {fileID: 7205193003254480754, guid: 4e3f5eaa56bdfb044a0197431c98938e, type: 2}
