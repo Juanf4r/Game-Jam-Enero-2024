@@ -4591,6 +4591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be46dc96982b988449fdfafcffa43ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PanelPelea: {fileID: 2086787737}
   clickButton: {fileID: 678386058}
   scoreSlider: {fileID: 867424419}
   PanelGanador: {fileID: 711197280}
