@@ -22,13 +22,13 @@ public class StatsManager : MonoBehaviour
         }
     }
 
-    public void SaveName(string user)
+    public void SaveName()
     {
         string textoInputField = username.text;
 
         PlayerPrefs.SetString("TextoGuardado", textoInputField);
         PlayerPrefs.Save();
-        textoInputField = playerName;
-        playerName = user;
+        playerName = textoInputField;
+
     }
 }
