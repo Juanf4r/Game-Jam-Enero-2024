@@ -6,6 +6,8 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class AdsManager : MonoBehaviour
 {
+    public static AdsManager Instance;
+
     [SerializeField] private RectTransform mainCanvas;
     [SerializeField] private GameObject panelWin;
     [SerializeField] private GameObject panelLose;
@@ -19,15 +21,25 @@ public class AdsManager : MonoBehaviour
     private bool _timeTrial;
 
     public float restantTime;
-    
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     private void Start()
     {
         _objectPool = ObjectPool.Instance;
         _timeTrial = false;
         _winGame = false;
-        restantTime = limitTime;
-        
-        StartGame();  
+        restantTime = limitTime; 
     }
 
     private void Update()
@@ -46,7 +58,7 @@ public class AdsManager : MonoBehaviour
         }
     }
 
-    private void StartGame()
+    public void StartGame()
     {
         StartCoroutine(ChargeAds());
 

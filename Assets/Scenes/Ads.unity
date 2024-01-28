@@ -973,7 +973,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742114390}
   m_CullTransparentMesh: 1
---- !u!1 &941088281
+--- !u!1 &880810279
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -981,8 +981,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 941088283}
-  - component: {fileID: 941088282}
+  - component: {fileID: 880810281}
+  - component: {fileID: 880810280}
   m_Layer: 0
   m_Name: DialogoManager
   m_TagString: Untagged
@@ -990,16 +990,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &941088282
+--- !u!114 &880810280
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941088281}
+  m_GameObject: {fileID: 880810279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 200dc2553cd9ecb4aa87e8f75d03d301, type: 3}
+  m_Script: {fileID: 11500000, guid: cd38e644d7232c84380d27e136e4ccbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 2061511053}
@@ -1008,14 +1008,13 @@ MonoBehaviour:
   lines:
   - 'Oh, you wanted to delete me, huh? Well, no. How about we play a game instead?
     Hehehe. '
-  textSpeed: 0.1
---- !u!4 &941088283
+--- !u!4 &880810281
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 941088281}
+  m_GameObject: {fileID: 880810279}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 926.41644, y: 533.7194, z: 6.2515597}
@@ -1149,7 +1148,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 946528fc2826be84eaf2488a0b016869, type: 3}
   - {fileID: 21300000, guid: 5e724b5e336eea84b893a0221fe76ca9, type: 3}
   - {fileID: 21300000, guid: a76b89a28c3b3f04391d12b8631bd23c, type: 3}
-  _counterGames: 0
+  counterGames: 0
 --- !u!4 &1153284126
 Transform:
   m_ObjectHideFlags: 0
@@ -1214,7 +1213,7 @@ MonoBehaviour:
   panelLose: {fileID: 2041927490}
   objectPooling: {fileID: 1731898965}
   limitTime: 40
-  _restantTime: 0
+  restantTime: 0
 --- !u!1 &1502879171
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,4 +2413,4 @@ SceneRoots:
   - {fileID: 1153284126}
   - {fileID: 1687234121}
   - {fileID: 1173335318}
-  - {fileID: 941088283}
+  - {fileID: 880810281}
