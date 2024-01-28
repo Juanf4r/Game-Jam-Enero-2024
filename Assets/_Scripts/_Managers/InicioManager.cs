@@ -45,7 +45,7 @@ public class InicioManager : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("SoundVolume"))
         {
-            PlayerPrefs.SetFloat("SoundVolume", 1);
+            PlayerPrefs.SetFloat("SoundVolume", 1f);
             Load();
         }
         else
@@ -55,7 +55,7 @@ public class InicioManager : MonoBehaviour
 
         if (!PlayerPrefs.HasKey("MusicVolume"))
         {
-            PlayerPrefs.SetFloat("MusicVolume", 1);
+            PlayerPrefs.SetFloat("MusicVolume", 1f);
             Load();
         }
         else
