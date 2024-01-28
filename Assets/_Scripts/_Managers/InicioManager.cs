@@ -11,8 +11,10 @@ public class InicioManager : MonoBehaviour
     [SerializeField] private Slider _sonidoSlider;
     [SerializeField] private Slider _musicaSlider;
     [SerializeField] private GameObject exitPanel;
-    [SerializeField] private GameObject leaderBoardObject;
     [SerializeField] private Button leaderBoardButton;
+
+    [SerializeField] private GameObject defaultCanvas;
+    [SerializeField] private GameObject newGameCanvas;
 
     private PlayerInput _playerInput;
     private ControllerActions _controllerActions;
@@ -54,10 +56,17 @@ public class InicioManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("MusicVolume"))
         {
             PlayerPrefs.SetFloat("MusicVolume", 1);
+            Load();
         }
         else
         {
             Load();
+        }
+
+        if (HasPlayed == true)
+        {
+            defaultCanvas.SetActive(false);
+            newGameCanvas.SetActive(true);
         }
     }
 
@@ -100,10 +109,14 @@ public class InicioManager : MonoBehaviour
 
     #endregion Input System
 
-    public void cambioDeEscena(int Escena)
+    #region LoadScene
+
+    public void LoadScene(int scene)
     {
-        SceneManager.LoadScene(Escena);
+        SceneManager.LoadScene(scene);
     }
+
+    #endregion
 
     #region Settings
 
