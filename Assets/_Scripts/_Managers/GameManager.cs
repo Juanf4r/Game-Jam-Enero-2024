@@ -268,7 +268,8 @@ public class GameManager : MonoBehaviour
 
             case 7:
 
-                WinGame();
+                WIN();
+                StartCoroutine(Won());
 
                 break;
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -19,6 +20,7 @@ public class InicioManager : MonoBehaviour
     [SerializeField] private GameObject exitPanel;
     [SerializeField] private GameObject defaultCanvas;
     [SerializeField] private GameObject newGameCanvas;
+    [SerializeField] private GameObject videoIntro;
 
     public PlayerInput _playerInput;
     public ControllerActions _controllerActions;
@@ -119,9 +121,16 @@ public class InicioManager : MonoBehaviour
 
     #region LoadScene
 
-    public void LoadScene(int scene)
+    public void LoadScene()
     {
-        SceneManager.LoadScene(scene);
+        videoIntro.SetActive(true);
+        StartCoroutine(VideoOut()); 
+    }
+
+    private IEnumerator VideoOut()
+    {
+        yield return new WaitForSeconds(32f);
+        SceneManager.LoadScene(2);
     }
 
     #endregion

@@ -8,7 +8,7 @@ public class AdivinaManager : MonoBehaviour
     public TMP_Text feedbackText;
     public TMP_InputField inputField;
     public TMP_Text MostrarIntentosT;
-    private string[] _contraseñas = { "unity", "game", "script", "player", "object" };
+    private string[] _contraseñas = { "virus", "jespervex", "harlequin", "funny", "laugh" };
     private string _contraseñaActual;
     private int _maximoIntentos = 6;
     [SerializeField] GameObject panelJuego;
