@@ -52,7 +52,7 @@ public class VencidasManager : MonoBehaviour
             PanelGanador.SetActive(true);
             PanelPelea.SetActive(false);
             StartCoroutine(Cambio(4f, 2));
-            TimeManager.Instance.WinTime(45f);
+            TimeManager.Instance.WinTime(15f);
 
         }
     }
