@@ -51,4 +51,8 @@ public class StatsManager : MonoBehaviour
         musicVolume = InicioManager.Instance._musicaSlider.value;
         _musica.volume = musicVolume;
     }
+    private void Update()
+    {
+        SaveMusica();
+    }
 }

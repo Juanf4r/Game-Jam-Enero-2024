@@ -12,7 +12,6 @@ public class InicioManager : MonoBehaviour
     [Header("Sliders")]
     [SerializeField] public Slider _sonidoSlider;
     [SerializeField] public Slider _musicaSlider;
-    [SerializeField] private AudioSource Musicafondo;
 
     [Header("Buttons")]
     [SerializeField] private Button leaderBoardButton;
@@ -43,40 +42,7 @@ public class InicioManager : MonoBehaviour
         //leaderBoardButton.interactable = HasPlayed;
         _playerInput = GetComponent<PlayerInput>();
         _controllerActions = new ControllerActions();
-        _controllerActions.GameController.Enable();
         _controllerActions.GameController.ExitGame.performed += EscapeButton;
-    }
-
-    private void Start()
-    {
-
-        if (!PlayerPrefs.HasKey("SoundVolume"))
-        {
-            PlayerPrefs.SetFloat("SoundVolume", 1f);
-            Load();
-        }
-        else
-        {
-            Load();
-        }
-
-        if (!PlayerPrefs.HasKey("MusicVolume"))
-        {
-            PlayerPrefs.SetFloat("MusicVolume", 1f);
-            Load();
-        }
-        else
-        {
-            Load();
-        }
-
-        if (HasPlayed == true)
-        {
-            defaultCanvas.SetActive(false);
-            newGameCanvas.SetActive(true);
-        }
-
-
     }
 
     #region Input Sytem
@@ -117,6 +83,40 @@ public class InicioManager : MonoBehaviour
     }
 
     #endregion Input System
+
+    private void Start()
+    {
+
+        if (!PlayerPrefs.HasKey("SoundVolume"))
+        {
+            PlayerPrefs.SetFloat("SoundVolume", 1f);
+            Load();
+        }
+        else
+        {
+            Load();
+        }
+
+        if (!PlayerPrefs.HasKey("MusicVolume"))
+        {
+            PlayerPrefs.SetFloat("MusicVolume", 1f);
+            Load();
+        }
+        else
+        {
+            Load();
+        }
+
+        if (HasPlayed == true)
+        {
+            defaultCanvas.SetActive(false);
+            newGameCanvas.SetActive(true);
+        }
+
+
+    }
+
+    
 
     #region LoadScene
 
@@ -188,6 +188,6 @@ public class InicioManager : MonoBehaviour
 
     private void Update()
     {
-        Musicafondo.volume = _musicaSlider.value;
+        //Musicafondo.volume = _musicaSlider.value;
     }
 }

@@ -467,8 +467,6 @@ MonoBehaviour:
   _musicaSlider: {fileID: 123342007}
   Musicafondo: {fileID: 0}
   leaderBoardButton: {fileID: 0}
-  music: {fileID: 0}
-  sinMusic: {fileID: 0}
   exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
   newGameCanvas: {fileID: 0}
@@ -1750,8 +1748,6 @@ MonoBehaviour:
   _musicaSlider: {fileID: 123342007}
   Musicafondo: {fileID: 0}
   leaderBoardButton: {fileID: 0}
-  music: {fileID: 0}
-  sinMusic: {fileID: 0}
   exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
   newGameCanvas: {fileID: 0}
@@ -3576,8 +3572,6 @@ MonoBehaviour:
   _musicaSlider: {fileID: 947363774}
   Musicafondo: {fileID: 0}
   leaderBoardButton: {fileID: 0}
-  music: {fileID: 0}
-  sinMusic: {fileID: 0}
   exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
   newGameCanvas: {fileID: 0}
@@ -6672,6 +6666,8 @@ MonoBehaviour:
   playerName: 
   username: {fileID: 1303423964}
   uiManager: {fileID: 1093290963}
+  musicVolume: 0
+  _musica: {fileID: 2033634787}
 --- !u!4 &1955543572
 Transform:
   m_ObjectHideFlags: 0
@@ -6802,8 +6798,6 @@ MonoBehaviour:
   _musicaSlider: {fileID: 123342007}
   Musicafondo: {fileID: 2033634787}
   leaderBoardButton: {fileID: 1033813718}
-  music: {fileID: 864620558}
-  sinMusic: {fileID: 21300000, guid: c8aecbace5e012e4987f930c9e2378ca, type: 3}
   exitPanel: {fileID: 173860253}
   defaultCanvas: {fileID: 704076610}
   newGameCanvas: {fileID: 1500362527}
@@ -7146,8 +7140,6 @@ MonoBehaviour:
   _musicaSlider: {fileID: 947363774}
   Musicafondo: {fileID: 0}
   leaderBoardButton: {fileID: 0}
-  music: {fileID: 0}
-  sinMusic: {fileID: 0}
   exitPanel: {fileID: 0}
   defaultCanvas: {fileID: 0}
   newGameCanvas: {fileID: 0}
