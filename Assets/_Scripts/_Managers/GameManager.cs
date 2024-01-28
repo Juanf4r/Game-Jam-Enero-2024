@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameLost;
     [SerializeField] private GameObject gameWin;
 
+    private string _playerUser;
+    private float _timeLeft;
     private InicioManager _inicioManager;
     private PlayerInput _playerInput;
     private ControllerActions _controllerActions;
@@ -151,6 +153,10 @@ public class GameManager : MonoBehaviour
     {
         gameWin.SetActive(true);
         _counterGames = 0;
+
+        _timeLeft = TimeManager.Instance.restantTime;
+        _playerUser = StatsManager.Instance.playerName;
+
         InicioManager.Instance.HasPlayed = true;
         SaveData();
 

@@ -12,7 +12,7 @@ public class TimeManager : MonoBehaviour
     //[SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private Time time;
     [SerializeField] private float limitTime;
-    [SerializeField] private float _restantTime;
+    public float restantTime;
 
     private GameManager _gameManager;
     private bool _timeTrial = false;
@@ -30,7 +30,7 @@ public class TimeManager : MonoBehaviour
         }
 
         _gameManager = GameManager.Instance;
-        _restantTime = limitTime;
+        restantTime = limitTime;
         //UpdateTime();
     }
 
@@ -38,11 +38,11 @@ public class TimeManager : MonoBehaviour
     {
         if (_timeTrial == false)
         {
-            _restantTime -= Time.deltaTime;
+            restantTime -= Time.deltaTime;
 
-            if (_restantTime <= 0.0f)
+            if (restantTime <= 0.0f)
             {
-                _restantTime = 0.0f;
+                restantTime = 0.0f;
                 _timeTrial = true;
 
                 SceneManager.LoadScene(1);
@@ -62,12 +62,12 @@ public class TimeManager : MonoBehaviour
 
     public void WinTime(float winTime)
     {
-        _restantTime += winTime;
+        restantTime += winTime;
     }
 
     public void LoseTime(float loseTime)
     {
-        _restantTime -= loseTime;
+        restantTime -= loseTime;
     }
 
     public void DestroyTimeManager()

@@ -6,7 +6,7 @@ public class StatsManager : MonoBehaviour
 {
     public static StatsManager Instance;
 
-    [SerializeField] private string playerName;
+    public string playerName;
 
     private void Awake()
     {
@@ -21,8 +21,8 @@ public class StatsManager : MonoBehaviour
         }
     }
 
-    public void SaveName()
+    public void SaveName(string user)
     {
-       
+       playerName = user;
     }
 }
