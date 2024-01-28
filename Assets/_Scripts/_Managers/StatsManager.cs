@@ -10,8 +10,6 @@ public class StatsManager : MonoBehaviour
     [HideInInspector] public string playerName;
     public TMP_InputField username;
     public UIManager uiManager;
-    public float musicVolume;
-    [SerializeField] private AudioSource _musica;
 
     private void Awake()
     {
@@ -44,15 +42,5 @@ public class StatsManager : MonoBehaviour
         string textoInputField = (user != null) ? user : username.text;
         playerName = textoInputField;
         PlayerPrefs.SetString("playerName", playerName);
-    }
-
-    public void SaveMusica()
-    {
-        musicVolume = InicioManager.Instance._musicaSlider.value;
-        _musica.volume = musicVolume;
-    }
-    private void Update()
-    {
-        SaveMusica();
     }
 }
