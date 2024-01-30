@@ -13,17 +13,13 @@ public class InicioManager : MonoBehaviour
     [SerializeField] public Slider _sonidoSlider;
     [SerializeField] public Slider _musicaSlider;
 
-    [Header("Buttons")]
-    [SerializeField] private Button leaderBoardButton;
-
     [Header("GameObjects")]
     [SerializeField] private GameObject exitPanel;
     [SerializeField] private GameObject defaultCanvas;
     [SerializeField] private GameObject newGameCanvas;
-    [SerializeField] private GameObject videoIntro;
 
-    public PlayerInput _playerInput;
-    public ControllerActions _controllerActions;
+    private PlayerInput _playerInput;
+    private ControllerActions _controllerActions;
     private bool _stopGame;
 
     [HideInInspector] public bool HasPlayed;
@@ -40,7 +36,6 @@ public class InicioManager : MonoBehaviour
         }
 
         _stopGame = false;
-        //leaderBoardButton.interactable = HasPlayed;
         _playerInput = GetComponent<PlayerInput>();
         _controllerActions = new ControllerActions();
         _controllerActions.GameController.ExitGame.performed += EscapeButton;
@@ -113,23 +108,20 @@ public class InicioManager : MonoBehaviour
             defaultCanvas.SetActive(false);
             newGameCanvas.SetActive(true);
         }
-
-
     }
-
-    
 
     #region LoadScene
 
     public void LoadScene()
     {
-        videoIntro.SetActive(true);
+        //videoIntro.SetActive(true);
         StartCoroutine(VideoOut()); 
     }
 
     private IEnumerator VideoOut()
     {
-        yield return new WaitForSeconds(32f);
+        //yield return new WaitForSeconds(32f);
+        yield return null;
         SceneManager.LoadScene(2);
     }
 
@@ -193,9 +185,4 @@ public class InicioManager : MonoBehaviour
     }
 
     #endregion
-
-    private void Update()
-    {
-        //Musicafondo.volume = _musicaSlider.value;
-    }
 }
