@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -129,35 +127,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
-    public void OpenWindows()
-    {
-        //open Window 
-    }
-
-    public void CloseWindows()
-    {
-        //close Window
-    }
-
-    public void openTimer()
-    {
-
-    }
-
-    public void closeTimer()
-    {
-
-    }
-
     #endregion
 
     #region Win or Lose
-
-    public void WinGame()
-    {
-        WIN();
-        //StartCoroutine(Won());
-    }
 
     public void LoseGame()
     {
@@ -177,7 +149,6 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator Won()
     {
-        counterGames = 0;
         Prueba.Instancia.contador = 0;
 
         _timeLeft = TimeManager.Instance.restantTime;
@@ -188,18 +159,19 @@ public class GameManager : MonoBehaviour
 
         InicioManager.Instance.HasPlayed = true;
         StatsManager.Instance.playerName = "";
-
-        SaveData();
-
-        //Suena musica de Ganar
+        
         yield return new WaitForSeconds(5f);
-
+        counterGames = 0;
+        
+        SaveData();
+        
         SceneManager.LoadScene(0);
     }
 
     public void WIN()
     {
         gameWin.SetActive(true);
+        StartCoroutine(Won());
     }
 
     #endregion
@@ -269,8 +241,8 @@ public class GameManager : MonoBehaviour
             case 7:
 
                 WIN();
-                StartCoroutine(Won());
-
+                Debug.Log("GANASTE");
+                
                 break;
 
             default:
