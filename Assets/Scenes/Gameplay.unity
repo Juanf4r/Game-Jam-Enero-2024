@@ -1494,7 +1494,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicVolume: 0
+  soundVolume: 0
   _musica: {fileID: 519420033}
+  _sound: {fileID: 519420033}
 --- !u!4 &606954808
 Transform:
   m_ObjectHideFlags: 0
