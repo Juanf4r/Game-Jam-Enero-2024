@@ -125,6 +125,11 @@ public class InicioManager : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void LoadLeaderboard()
+    {
+        SceneManager.LoadScene(1);
+    }
+
     #endregion
 
     #region Settings

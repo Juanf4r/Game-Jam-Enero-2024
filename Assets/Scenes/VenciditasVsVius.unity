@@ -240,6 +240,7 @@ MonoBehaviour:
   gameWin: {fileID: 0}
   antiVirus: {fileID: 0}
   antiVirus2: {fileID: 0}
+  clipiPanel: {fileID: 0}
   background: {fileID: 981024714}
   backgroundImages:
   - {fileID: 21300000, guid: a76b89a28c3b3f04391d12b8631bd23c, type: 3}
@@ -1488,7 +1489,7 @@ MonoBehaviour:
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
+    m_ColorMultiplier: 5
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -1501,7 +1502,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1516416922}
   m_FillRect: {fileID: 436075761}
   m_HandleRect: {fileID: 1516416920}
