@@ -14,12 +14,14 @@ public class Prueba : MonoBehaviour
     public TextMeshProUGUI dialogueText4;
     public TextMeshProUGUI dialogueText5;
     public TextMeshProUGUI dialogueText6;
+    public TextMeshProUGUI dialogueText7;
     [SerializeField] private GameObject PanelDialogo1;
     [SerializeField] private GameObject PanelDialogo2;
     [SerializeField] private GameObject PanelDialogo3;
     [SerializeField] private GameObject PanelDialogo4;
     [SerializeField] private GameObject PanelDialogo5;
     [SerializeField] private GameObject PanelDialogo6;
+    [SerializeField] private GameObject PanelDialogo7;
     public string[] lines;
     public string[] linesPanel1;
     public string[] linesPanel2;
@@ -27,6 +29,7 @@ public class Prueba : MonoBehaviour
     public string[] linesPanel4;
     public string[] linesPanel5;
     public string[] linesPanel6;
+    public string[] linesPanel7;
     public float textSpeed = 0.1f;
     private int index = 0;
     public int contador = 0;
@@ -107,6 +110,13 @@ public class Prueba : MonoBehaviour
                 dialogueText = dialogueText6;
                 startDialogue();
                 break;
+            case 7:
+                Debug.Log("Entre al case 7");
+                PanelDialogo7.SetActive(true);
+                lines = linesPanel7;
+                dialogueText = dialogueText7;
+                startDialogue();
+                break;
         }
     }
 
@@ -172,6 +182,9 @@ public class Prueba : MonoBehaviour
                     break;
                 case 6:
                     PanelDialogo6.SetActive(false);
+                    break;
+                case 7:
+                    PanelDialogo7.SetActive(false);
                     break;
             }
             //PanelDialogo.SetActive(false);

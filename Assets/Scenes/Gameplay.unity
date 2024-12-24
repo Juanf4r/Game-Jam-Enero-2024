@@ -584,12 +584,14 @@ MonoBehaviour:
   dialogueText4: {fileID: 1535023738}
   dialogueText5: {fileID: 1957234127}
   dialogueText6: {fileID: 1924888006}
+  dialogueText7: {fileID: 1381956082}
   PanelDialogo1: {fileID: 1779237972}
   PanelDialogo2: {fileID: 1625521222}
   PanelDialogo3: {fileID: 717054862}
   PanelDialogo4: {fileID: 50404160}
   PanelDialogo5: {fileID: 295911612}
   PanelDialogo6: {fileID: 1340616084}
+  PanelDialogo7: {fileID: 1082065970}
   lines: []
   linesPanel1:
   - 'Well, well... It seems there are still people falling for these traps, hehehe. '
@@ -611,6 +613,8 @@ MonoBehaviour:
   linesPanel6:
   - Look last chance, if you succeed in guessing this I think there's nothing more
     I can do :c
+  linesPanel7:
+  - 'Wait, wait , wait, maybe we can talk about this! '
   textSpeed: 0.1
   contador: 0
 --- !u!4 &288802944
@@ -2135,7 +2139,6 @@ RectTransform:
   m_Children:
   - {fileID: 872867550}
   - {fileID: 1381956081}
-  - {fileID: 1481170898}
   m_Father: {fileID: 1144449390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -2300,6 +2303,7 @@ RectTransform:
   - {fileID: 295911613}
   - {fileID: 1340616087}
   - {fileID: 447763519}
+  - {fileID: 1481170898}
   m_Father: {fileID: 1579309088}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2387,6 +2391,7 @@ MonoBehaviour:
   gameWin: {fileID: 1082065970}
   antiVirus: {fileID: 5862849428801848026}
   antiVirus2: {fileID: 447763518}
+  clipiPanel: {fileID: 1481170897}
   background: {fileID: 981024714}
   backgroundImages:
   - {fileID: 21300000, guid: a76b89a28c3b3f04391d12b8631bd23c, type: 3}
@@ -2810,7 +2815,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481170897}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2818,12 +2823,12 @@ RectTransform:
   - {fileID: 713433548}
   - {fileID: 587951977}
   - {fileID: 2081987093}
-  m_Father: {fileID: 1082065971}
+  m_Father: {fileID: 1144449390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 760.52, y: -656.9439}
-  m_SizeDelta: {x: -1540.8143, y: -26.9751}
+  m_AnchoredPosition: {x: 760.52, y: -295.32397}
+  m_SizeDelta: {x: -1540.8143, y: -746.9751}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1481170899
 MonoBehaviour:

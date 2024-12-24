@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject gameWin;
     [SerializeField] private GameObject antiVirus;
     [SerializeField] private GameObject antiVirus2;
+    [SerializeField] private GameObject clipiPanel;
 
     [Header("Background")]
     [SerializeField] private Image background;
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        //SingleTon
+        // SingleTon
         if (Instance != null && Instance != this)
         {
             Destroy(this);
@@ -48,7 +49,7 @@ public class GameManager : MonoBehaviour
 
         _inicioManager = InicioManager.Instance;
 
-        //Input System
+        // Input System
         _playerInput = GetComponent<PlayerInput>();
         _controllerActions = new ControllerActions();
         _controllerActions.GameController.Enable();
@@ -56,25 +57,19 @@ public class GameManager : MonoBehaviour
 
         gameLost.SetActive(false);
         gameWin.SetActive(false);
-        counterGames = 0;
         _stopGame = false;
         _randomBool = UnityEngine.Random.Range(0, 2) == 0;
 
-        //Active Canvas
+        // Activate Canvas
         mainCanvas.SetActive(true);
     }
 
     private void Start()
     {
         LoadData();
-
-        if(_gameCatch == false)
+        if (!_gameCatch)
         {
             background.sprite = backgroundImages[counterGames];
-        }
-        else if(_gameCatch == true)
-        {
-            //No cambia
         }
     }
 
@@ -96,13 +91,13 @@ public class GameManager : MonoBehaviour
     {
         if (context.performed)
         {
-            if(_stopGame == false)
+            if (_stopGame == false)
             {
                 _stopGame = true;
                 exitPanel.SetActive(true);
                 Time.timeScale = 0;
             }
-            else if(_stopGame == true)
+            else if (_stopGame == true)
             {
                 _stopGame = false;
                 exitPanel.SetActive(false);
@@ -143,34 +138,35 @@ public class GameManager : MonoBehaviour
         counterGames = 0;
         Prueba.Instancia.contador = 0;
         StatsManager.Instance.playerName = "";
-        //Suena musica de Perder
+        SaveData();
         SceneManager.LoadScene(0);
     }
 
     private IEnumerator Won()
     {
+        clipiPanel.SetActive(true);
         Prueba.Instancia.contador = 0;
 
         _timeLeft = TimeManager.Instance.restantTime;
         _playerUser = StatsManager.Instance.playerName;
         TimeManager.Instance.TimeTrial = true;
 
-        SaveData(_timeLeft, _playerUser);   
+        SaveData(_timeLeft, _playerUser);
 
         InicioManager.Instance.HasPlayed = true;
         StatsManager.Instance.playerName = "";
-        
+
         yield return new WaitForSeconds(5f);
+
         counterGames = 0;
-        
         SaveData();
-        
+
         SceneManager.LoadScene(0);
     }
 
     public void WIN()
     {
-        gameWin.SetActive(true);
+        //gameWin.SetActive(true);
         StartCoroutine(Won());
     }
 
@@ -181,33 +177,28 @@ public class GameManager : MonoBehaviour
     public void StartMiniGame()
     {
         counterGames += 1;
+        Debug.Log("Contador de juegos: " + counterGames);
+
         SaveData();
         Prueba.Instancia.SaveData();
 
         switch (counterGames)
         {
             case 1:
-
                 StopTheAds();
-
                 break;
 
             case 2:
-
                 _gameCatch = true;
                 FollowTheIcon();
-
                 break;
 
             case 3:
-
-                 ClickTheButton();
-
+                ClickTheButton();
                 break;
 
             case 4:
-
-                if (_randomBool == true)
+                if (_randomBool)
                 {
                     GuessThePassword();
                 }
@@ -215,12 +206,10 @@ public class GameManager : MonoBehaviour
                 {
                     StopTheAds();
                 }
-
                 break;
 
             case 5:
-
-                if (_randomBool == true)
+                if (_randomBool)
                 {
                     ClickTheButton();
                 }
@@ -229,25 +218,19 @@ public class GameManager : MonoBehaviour
                     _gameCatch = true;
                     FollowTheIcon();
                 }
-
                 break;
 
             case 6:
-
                 GuessThePassword();
-
                 break;
 
             case 7:
-
                 WIN();
                 Debug.Log("GANASTE");
-                
                 break;
 
             default:
-
-                Debug.Log("Error en la matrix");
+                Debug.Log("Error en la matriz");
                 break;
         }
     }
@@ -282,27 +265,22 @@ public class GameManager : MonoBehaviour
         {
             if (stats[i].time >= timeLeft)
             {
-                //En caso de que haya un valor menor que el que se consiguio, este se recorre abajo
+                // En caso de que haya un valor menor que el conseguido, se recorre abajo
                 stats[i + 1].time = stats[i].time;
                 stats[i + 1].playerName = stats[i].playerName;
 
-                //Se reemplaza el valor viejo con el nuevo
+                // Se reemplaza el valor viejo con el nuevo
                 stats[i].time = timeLeft;
                 stats[i].playerName = userName;
 
                 stats[5].time = 0;
                 stats[5].playerName = "";
             }
-            else if (stats[i].time <= timeLeft)
-            {
-                //Tu progreso fue muy bajo, sigue jugando
-            }
         }
     }
 
     private void LoadData()
     {
-
         if (PlayerPrefs.HasKey("counterGames"))
         {
             counterGames = PlayerPrefs.GetInt("counterGames");
